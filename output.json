@@ -1,0 +1,39 @@
+# 导入必要的模块
+from osgeo import ogr
+ 
+# 设置Shapefile文件路径
+shapefile_path = 'C:/Users/14158/Desktop/smarthotel/ssPoint.shp'
+ 
+# 打开Shapefile数据集
+ds = ogr.Open(shapefile_path, update=1)
+layer = ds.GetLayer()
+ 
+# 获取要素定义，用于添加新字段
+feature_def = layer.GetLayerDefn()
+ 
+# 添加经度字段
+lon_field = ogr.FieldDefn('Longitude', ogr.OFTReal)
+lon_field.SetWidth(15)
+lon_field.SetPrecision(10)
+layer.CreateField(lon_field)
+ 
+# 添加纬度字段
+lat_field = ogr.FieldDefn('Latitude', ogr.OFTReal)
+lat_field.SetWidth(15)
+lat_field.SetPrecision(10)
+layer.CreateField(lat_field)
+ 
+# 遍历要素，计算并添加经纬度
+for feature in layer:
+    geom = feature.GetGeometryRef()
+    lon, lat, z = geom.GetPoint()
+    
+    # 设置经纬度值
+    feature.SetField('Longitude', lon)
+    feature.SetField('Latitude', lat)
+    
+    # 更新要素
+    layer.SetFeature(feature)
+ 
+# 关闭数据集
+ds.Destroy()
