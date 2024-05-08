@@ -34,7 +34,7 @@ export default {
     },
   },
   mounted() {
-    // 獲取一個一到四的隨機整數
+    // 獲取一個一到四的隨
     const random = Math.floor(Math.random() * 4) + 1;
     // 從../assets/裏面獲取頭像，頭像名
     this.image = require(`../assets/${random}.png`);
