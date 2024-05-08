@@ -18,10 +18,10 @@
     import rightCards from '@/components/rightcards/rightContainer'
     import { gpsConvert } from "@/network/common.js";
     import  { SlickList, SlickItem } from "vue-slicksort";
-    window._AMapSecurityConfig = {
-      securityJsCode: 'be172556870abdd4531a3e6e78e0701c'
-    }
     import geojson from '../constant.js';
+    window._AMapSecurityConfig = {
+    securityJsCode: "247e4c3777cda788358efc91cc7c0922",
+  };
     export default {
       name:'main',
       data() {
@@ -120,66 +120,90 @@
           // this.$message.error(`暂无${this.spot.poiName}视频数据`)
         },
         initMap(callback) {
-          window._AMapSecurityConfig = {
-            securityJsCode: "c6f43b059bdd89b63d740dc3c4b3a00f",
-          };
-          AMapLoader.load({
-            key: "9dea29df54b111a53edd90845b25180f", // 申请好的Web端开发者Key，首次调用 load 时必填
-            version: "2.0", // 指定要加载的 JSAPI 的版本，缺省时默认为 1.4.15
-            plugins: ["AMap.ToolBar","AMap.MouseTool", "AMap.Scale", "AMap.HawkEye", "AMap.Geocoder",'AMap.Driving', 'AMap.Walking', 'AMap.Riding', 'AMap.Transfer'], // 需要使用的的插件列表，如比例尺'AMap.Scale'等
-            AMapUI: {
-              // 是否加载 AMapUI，缺省不加载
-              version: "1.1", // AMapUI 缺省 1.1
-              plugins: ['overlay/SimpleMarker','overlay/SimpleInfoWindow','control/BasicControl'] // 需要加载的 AMapUI ui插件
-            },
-            "Loca":{                // 是否加载 Loca， 缺省不加载
-                "version": '2.0.0'  // Loca 版本，缺省 1.3.2
-            },
-          })
-              .then(AMap => {
-                this.AMap = AMap
-                this.map = new AMap.Map("container", {
-                  rotateEnable:true,
-                  pitchEnable:true,
-                  zoom: 16,
-                  pitch: 50,
-                  rotation: '15',
-                  viewMode:'3D', //开启3D视图,默认为关闭
-                  mapStyle: 'amap://styles/45311ae996a8bea0da10ad5151f72979',
-                  zooms:[2,20],
-                  center:[112.91950,27.89742],
-                  WebGLParams:{
-                    preserveDrawingBuffer:true
-                  }
-                });
-                callback(AMap,this.map)
-                // let marker = new AMap.Marker({
-                //     position: [112.92175,27.89742], // 标记的坐标
-                //     icon: new AMap.Icon({
-                //         size: new AMap.Size(36, 36),  // 图标尺寸
-                //         image: 'https://a.amap.com/Loca/static/loca-v2/demos/images/track_marker.png',  // 图标的URL
-                //         imageSize: new AMap.Size(36, 36)  // 图标的尺寸
-                //     }),
-                //     map: this.map
-                // });
-  
-                //地图控件
-                // this.map.addControl(new AMap.Scale());
-                // this.map.addControl(new AMap.ToolBar({
-                //   position:{
-                //     bottom:'75px',
-                //     left:'32px',
-                //   }
-                // }));
-                // // this.map.addControl(new AMap.HawkEye());
-                // this.mouseTool = new AMap.MouseTool()
-                // this.map.addControl(this.mouseTool);
-              })
-              .catch(e => {
-                console.log(e, "高德地图加载失败");
-              });
-    
+  window._AMapSecurityConfig = {
+    securityJsCode: "c6f43b059bdd89b63d740dc3c4b3a00f",
+  };
+  AMapLoader.load({
+    key: "9dea29df54b111a53edd90845b25180f", // 申请好的Web端开发者Key，首次调用 load 时必填
+    version: "2.0", // 指定要加载的 JSAPI 的版本
+    plugins: ["AMap.ToolBar", "AMap.MouseTool", "AMap.Scale", "AMap.HawkEye", "AMap.Geocoder", 'AMap.Driving', 'AMap.Walking', 'AMap.Riding', 'AMap.Transfer'], // 需要使用的的插件列表
+    AMapUI: {
+      version: "1.1", // AMapUI 版本
+      plugins: ['overlay/SimpleMarker', 'overlay/SimpleInfoWindow', 'control/BasicControl']
+    },
+    "Loca": {
+      "version": '2.0.0' // Loca 版本
+    },
+  })
+    .then(AMap => {
+      this.AMap = AMap;
+      this.map = new AMap.Map("container", {
+        rotateEnable: true,
+        pitchEnable: true,
+        zoom: 16,
+        pitch: 50,
+        rotation: '15',
+        viewMode: '3D',
+        mapStyle: 'amap://styles/84ba10a821298afbfc69cac6d854d241',
+        zooms: [2, 20],
+        center: [112.91950, 27.89742],
+        WebGLParams: {
+          preserveDrawingBuffer: true
+        }
+      });
+
+      let loca = new Loca.Container({
+        map: this.map
+      });
+
+      let prismLayer = new Loca.PrismLayer({
+        zIndex: 10,
+        opacity: 1,
+        visible: true,
+        hasSide: true
+      });
+
+      let geo = new Loca.GeoJSONSource({
+        data: geojson,
+      });
+      console.log('GeoJSONSource',geo)
+      
+      prismLayer.setSource(geo);
+
+      prismLayer.setStyle({
+        unit: 'meter',
+        sideNumber: 14,
+        topColor: (index, f) => {
+          var n = f.properties['41_47LS'];
+          return n > 510 ? '#E97091' : '#2852F1';
         },
+        sideTopColor: (index, f) => {
+          var n = f.properties['41_47LS'];
+          return n > 510 ? '#E97091' : '#2852F1';
+        },
+        sideBottomColor: '#002bb9',
+        radius: 15,
+        height: (index, f) => {
+          var props = f.properties;
+          var height = f.properties['41_47LS'] + Math.floor(Math.random() * 10000) + 1;
+          return height;
+        },
+        rotation: 360,
+        altitude: 0,
+      });
+
+      loca.add(prismLayer);
+      
+      // Animate and other interaction codes here
+
+      callback(AMap, this.map);
+    })
+    .catch(e => {
+      console.log(e, "高德地图加载失败");
+    });
+}
+,
+
         mapFuns(AMap,map){
           console.log('amp',AMap)
           this.addAllPoi(AMap,map,geojson)

@@ -2,7 +2,7 @@
 	<div class="card-wrapper">
 		<div class="card">
 			<div class="card-top">
-				<h1 class="title">管理员中心</h1>
+				<h1 class="title">异常预警</h1>
 				<span class="button-text" @click="showDialog('A')">数据查询</span>
 			</div>
 			<div class="card-content" ref='content'>

@@ -3,15 +3,15 @@
 		<div class="card">
 			<div class="card-top">
 				<h1 class="title">安防中心</h1>
-				<span class="button-text" @click="showDialog('A')">数据查询</span>
+				<span class="button-text" @click="showDialog('A')">维护分析</span>
 			</div>
 			<div class="card-content" ref='content'>
         <div v-for="(device, index) in security_device" :key="index" class='scroll'>{{ device.show }}</div>
 			</div>
-			<div class="card-bottom">
+			<!-- <div class="card-bottom">
 				<span class="button-text" @click="showAlert">异常预警</span>
 				<span class="button-text" @click="showDialog('C')">数据导出</span>
-			</div>
+			</div> -->
 		</div>
 		<!-- 弹出框容器 -->
 		<el-dialog

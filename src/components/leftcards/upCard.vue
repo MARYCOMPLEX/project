@@ -2,7 +2,7 @@
   <div class="card-wrapper">
     <div class="card">
       <div class="card-top">
-        <h1 class="title">水力中心</h1>
+        <h1 class="title">水力系统</h1>
         <span class="button-text" @click="showDialog('A')">数据查询</span>
       </div>
       <div class="card-content">
@@ -12,8 +12,8 @@
         <div>水流速度: {{ water_speed }}</div>
       </div>
       <div class="card-bottom">
-        <span class="button-text" @click="showAlert">异常预警</span>
-        <span class="button-text" @click="showDialog('C')">数据导出</span>
+        <span class="button-text" @click="showAlert">空间展示</span>
+        <span class="button-text" @click="showDialog('C')">流量分析</span>
       </div>
     </div>
     <!-- 弹出框容器 -->
@@ -23,30 +23,39 @@
       :visible.sync="dialogVisible.A"
       width="50%">
       <div class="select-container">
-        <el-select v-model="selectedOption1" placeholder="区域">
-          <el-option
-            v-for="(option, index) in options1"
-            :key="index"
-            :label="option.label"
-            :value="option.value">
-          </el-option>
-        </el-select>
-        <el-select v-model="selectedOption2" placeholder="楼栋">
-          <el-option
-            v-for="(option, index) in options2"
-            :key="index"
-            :label="option.label"
-            :value="option.value">
-          </el-option>
-        </el-select>
-        <el-select v-model="selectedOption3" placeholder="宿舍">
-          <el-option
-            v-for="(option, index) in options3"
-            :key="index"
-            :label="option.label"
-            :value="option.value">
-          </el-option>
-        </el-select>
+        <div>
+          <span>选择区域：</span>
+          <el-select v-model="selectedOption1">
+            <el-option
+              v-for="(option, index) in options1"
+              :key="index"
+              :label="option.label"
+              :value="option.value">
+            </el-option>
+          </el-select>
+        </div>
+        <div>
+          <span>选择楼栋：</span>
+          <el-select v-model="selectedOption2">
+            <el-option
+              v-for="(option, index) in options2"
+              :key="index"
+              :label="option.label"
+              :value="option.value">
+            </el-option>
+          </el-select>
+        </div>
+        <div>
+          <span>选择宿舍：</span>
+          <el-select v-model="selectedOption3">
+            <el-option
+              v-for="(option, index) in options3"
+              :key="index"
+              :label="option.label"
+              :value="option.value">
+            </el-option>
+          </el-select>
+        </div>
       </div>
       <div class="result-container" v-if='searchResult'>
         <div>热水用量: {{ searchResult.hot_consum}}</div>

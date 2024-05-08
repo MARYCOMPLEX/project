@@ -3,15 +3,15 @@
 		<div class="card">
 			<div class="card-top">
 				<h1 class="title">监控中心</h1>
-				<span class="button-text" @click="showDialog('A')">数据查询</span>
+				<span class="button-text" @click="showDialog('A')">检索回放</span>
 			</div>
 			<div class="card-content">
         <img src="@/assets/监控.png" alt="Placeholder Image" class='placeholder-image'>    
 			</div>
-			<!-- <div class="card-bottom">
-				<span class="button-text" @click="showAlert">异常预警</span>
-				<span class="button-text" @click="showDialog('C')">数据导出</span>
-			</div> -->
+			<div class="card-bottom">
+				<span class="button-text" @click="showAlert">实时操作</span>
+				<span class="button-text" @click="showDialog('C')">远程控制</span>
+			</div>
 		</div>
 		<!-- 弹出框容器 -->
 		<el-dialog

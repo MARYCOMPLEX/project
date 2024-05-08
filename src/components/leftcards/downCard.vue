@@ -2,15 +2,15 @@
 	<div class="card-wrapper">
 		<div class="card">
 			<div class="card-top">
-				<h1 class="title">门禁中心</h1>
-				<span class="button-text" @click="showDialog('A')">数据查询</span>
+				<h1 class="title">出入管理</h1>
+				<span class="button-text" @click="showDialog('A')">在线查寝</span>
 			</div>
 			<div class="card-content" ref='content'>
         <div v-for="(device, index) in security_device" :key="index" class='scroll'>{{ device.show }}</div>
         </div>
 			<div class="card-bottom">
-				<span class="button-text" @click="showAlert">异常预警</span>
-				<span class="button-text" @click="showDialog('C')">数据导出</span>
+				<span class="button-text" @click="showAlert">空间展示</span>
+				<span class="button-text" @click="showDialog('C')">人流量分析</span>
 			</div>
 		</div>
 		<!-- 弹出框容器 -->

@@ -2,7 +2,7 @@
 	<div class="card-wrapper">
 		<div class="card">
 			<div class="card-top">
-				<h1 class="title">电力中心</h1>
+				<h1 class="title">电力服务</h1>
 				<span class="button-text" @click="showDialog('A')">数据查询</span>
 			</div>
 			<div class="card-content">
@@ -12,8 +12,8 @@
 				<div>用电量: {{ totalE }}</div>
 			</div>
 			<div class="card-bottom">
-				<span class="button-text" @click="showAlert">异常预警</span>
-				<span class="button-text" @click="showDialog('C')">数据导出</span>
+				<span class="button-text" @click="showAlert">空间展示</span>
+				<span class="button-text" @click="showDialog('C')">载荷分析</span>
 			</div>
 		</div>
 		<!-- 弹出框容器 -->
