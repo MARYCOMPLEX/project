@@ -24,6 +24,7 @@
       width="50%">
       <div class="select-container">
         <div>
+          
           <span>选择区域：</span>
           <el-select v-model="selectedOption1">
             <el-option
@@ -35,7 +36,7 @@
           </el-select>
         </div>
         <div>
-          <span>选择楼栋：</span>
+          <span>选择楼栋：</span>               
           <el-select v-model="selectedOption2">
             <el-option
               v-for="(option, index) in options2"
@@ -70,9 +71,9 @@
     </el-dialog>
 
     <el-dialog
-      v-if="dialogVisible.B"
-      title="异常预警信息"
-      :visible.sync="dialogVisible.B"
+      v-if="dialogVisible.C"
+      title="流量分析"
+      :visible.sync="dialogVisible.C"
       width="50%" 
       style="max-height:500px;overflowY:auto">
       <div class="alert-list">
@@ -86,47 +87,67 @@
     </el-dialog>
 
     <el-dialog
-      v-if="dialogVisible.C"
-      title="数据导出"
-      :visible.sync="dialogVisible.C"
+      v-if="dialogVisible.B"
+      title="空间展示"
+      :visible.sync="dialogVisible.B"
       width="50%">
       <div class="select-container">
-        <el-select v-model="selectedOption1" placeholder="区域">
-          <el-option
-            v-for="(option, index) in options1"
-            :key="index"
-            :label="option.label"
-            :value="option.value">
-          </el-option>
-        </el-select>
-        <el-select v-model="selectedOption2" placeholder="楼栋">
-          <el-option
-            v-for="(option, index) in options2"
-            :key="index"
-            :label="option.label"
-            :value="option.value">
-          </el-option>
-        </el-select>
-        <el-select v-model="selectedOption3" placeholder="宿舍">
-          <el-option
-            v-for="(option, index) in options3"
-            :key="index"
-            :label="option.label"
-            :value="option.value">
-          </el-option>
-        </el-select>
-      </div>
-      <div class="result-container" v-if='searchResult'>
-        <div>热水用量: {{ searchResult.hot_consum}}</div>
-        <div>冷水用量: {{ searchResult.cool_consum}}</div>
-        <div>水压: {{ searchResult.water_pressure}}</div>
-        <div>水流速度: {{ searchResult.water_speed }}</div>
+        <div>
+          <div class='select-title'>
+            <span >选择用水类型：</span>
+          </div>
+          <el-select v-model="spaceOption1">
+            <el-option
+              v-for="(option, index) in spaceOptions1"
+              :key="index"
+              :label="option.label"
+              :value="option.value">
+            </el-option>
+          </el-select>
+        </div>
+        <div>
+          <div class='select-title'>
+            <span >日期选择：</span>
+          </div>
+          <el-select v-model="spaceOption2">
+            <el-option
+              v-for="(option, index) in spaceOptions2"
+              :key="index"
+              :label="option.label"
+              :value="option.value">
+            </el-option>
+          </el-select>
+        </div>
+        <!-- 根据选择的日期范围显示日期选择器 -->
+        <div v-if="spaceOption2 === '自定义时间段'">
+          <div>
+            <div class='select-title'>
+              <span >起始日期：</span>
+            </div>
+            <el-date-picker
+              v-model="startDate"
+              type="date"
+              placeholder="选择日期">
+            </el-date-picker>
+          </div>
+          <div>
+            <div class='select-title'>
+              <span >结束日期：</span>
+            </div>
+            <el-date-picker
+              v-model="endDate"
+              type="date"
+              placeholder="选择日期">
+            </el-date-picker>
+          </div>
+        </div>
       </div>
       <span slot="footer" class="dialog-footer">
-        <el-button type="primary" @click="exportToExcel">导出</el-button>
-        <el-button type="primary" @click="search">查询</el-button>
+        <el-button type="primary" @click="renderGeojson">确定</el-button>
       </span>
-    </el-dialog>
+  </el-dialog>
+  
+  
   </div>
 </template>
 
@@ -145,6 +166,8 @@ export default {
       alertList: [ // 预警信息列表
         // 其他预警信息...
       ],
+      endDate: '',
+      startDate: '',
       hot_consum:'',
       cool_consum:'',
       water_pressure:'',
@@ -180,7 +203,26 @@ export default {
         { label: '1', value: '1' },
         { label: '2', value: '2' },
         { label: '3', value: '3' }
-      ]
+      ],
+      spaceOption1: '',
+      spaceOption2: '',
+      spaceOption3: '',
+      spaceOptions1: [
+        { label: '热水用量', value: '热水用量' },
+        { label: '冷水用量', value: '冷水用量' }
+      ],
+      //当天，近7天，近1个月，自定义时间段
+      spaceOptions2: [
+        { label: '当天', value: '当天' },
+        { label: '近7天', value: '近7天' },
+        { label: '近1个月', value: '近1个月' },
+        { label: '自定义时间段', value: '自定义时间段' }
+      ],
+      spaceOptions3: [
+        { label: '2020-01-01', value: '2020-01-01' },
+        { label: '2020-01-02', value: '2020-01-02' },
+        { label: '2020-01-03', value: '2020-01-03' }
+      ],
     };
   },
   mounted() {
@@ -238,6 +280,10 @@ export default {
         water_speed: searchResult_hot[0].Water_flow_velocity
       }
       
+    },
+    renderGeojson(){
+      this.dialogVisible.B = false;
+      this.$emit('renderGeojson', this.spaceOption2 + this.spaceOption1)
     },
     exportToExcel() {
       if(this.searchResult === '') {
@@ -393,6 +439,9 @@ export default {
   cursor: pointer;
   font-size: 16px;
   line-height: 30px;
+}
+.select-title{
+  width:100px
 }
 .card-content {
   flex-grow: 1;

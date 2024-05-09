@@ -368,7 +368,7 @@ export default {
 .card-bottom {
 	display: flex;
 	justify-content: space-between;
-	padding: 10px;
+	padding: 0px;
 	background-color: rgba(0, 0, 0, 0.2); /* 半透明背景以区分内容 */
 }
 .title {

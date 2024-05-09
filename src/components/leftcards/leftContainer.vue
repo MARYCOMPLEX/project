@@ -1,6 +1,6 @@
 <template>
     <div>
-      <upCard @locate='locate'  :key="index" />
+      <upCard @locate='locate'  @renderGeojson='renderGeojson':key="index" />
       <midCard @locate='locate'  :key="index" />
       <downCard @locate='locate' :key="index"/>
     </div>
@@ -20,6 +20,9 @@
     methods: {
       locate(pos,phone) {
         this.$emit('locate',pos,phone);
+      },
+      renderGeojson(params){
+        this.$emit('renderGeojson',params);
       }
     }
   }
