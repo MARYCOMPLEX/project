@@ -14,50 +14,66 @@
 			</div> -->
 		</div>
 		<!-- 弹出框容器 -->
-		<el-dialog
-			v-if="dialogVisible.A"
-			title="数据查询"
-			:visible.sync="dialogVisible.A"
-			width="50%">
-			<div class="select-container">
-				<el-select v-model="selectedOption1" placeholder="区域">
-					<el-option
-						v-for="(option, index) in options1"
-						:key="index"
-						:label="option.label"
-						:value="option.value">
-					</el-option>
-				</el-select>
-				<el-select v-model="selectedOption2" placeholder="楼栋">
-					<el-option
-						v-for="(option, index) in options2"
-						:key="index"
-						:label="option.label"
-						:value="option.value">
-					</el-option>
-				</el-select>
-				<el-select v-model="selectedOption3" placeholder="宿舍">
-					<el-option
-						v-for="(option, index) in options3"
-						:key="index"
-						:label="option.label"
-						:value="option.value">
-					</el-option>
-				</el-select>
-			</div>
-			<div class="result-container" v-if='searchResult'>
-				<div>设备ID: {{ searchResult.Security_equipment_Id}}</div>
-				<div>所属楼栋: {{ searchResult.Locate_floor}}</div>
-				<div>更换时间: {{ searchResult.Replacement_time}}</div>
-				<div>运行状态: {{ searchResult.Access_status }}</div>
-        <div>保质期: {{ searchResult.Shelf_life }}</div>
-        <div>下次检修时间: {{ searchResult.Turnaround_time }}</div>
-			</div>
-			<span slot="footer" class="dialog-footer">
-				<el-button @click="locate">定位</el-button>
-				<el-button type="primary" @click="search">查询</el-button>
-			</span>
-		</el-dialog>
+    <el-dialog
+      v-if="dialogVisible.A"
+      title="维护分析"
+      :visible.sync="dialogVisible.A"
+      width="50%">
+      <el-row :gutter="5">
+        <el-col :span="8">
+          <span>安防设备类型：</span>
+        </el-col>
+        <el-col :span="16">
+          <el-select v-model="selectedOption3" placeholder="选择安防设备类型">
+            <el-option
+              v-for="(option, index) in options3"
+              :key="index"
+              :label="option.label"
+              :value="option.value">
+            </el-option>
+          </el-select>
+        </el-col>
+      </el-row>
+      <el-row :gutter="5">
+        <el-col :span="8">
+          <span>区域：</span>
+        </el-col>
+        <el-col :span="16">
+          <el-select v-model="selectedOption1" placeholder="区域">
+            <el-option
+              v-for="(option, index) in options1"
+              :key="index"
+              :label="option.label"
+              :value="option.value">
+            </el-option>
+          </el-select>
+        </el-col>
+      </el-row>
+      <el-row :gutter="5">
+        <el-col :span="8">
+          <span>楼栋：</span>
+        </el-col>
+        <el-col :span="16">
+          <el-select v-model="selectedOption2" placeholder="楼栋">
+            <el-option
+              v-for="(option, index) in options2"
+              :key="index"
+              :label="option.label"
+              :value="option.value">
+            </el-option>
+          </el-select>
+        </el-col>
+      </el-row>
+      <span slot="footer" class="dialog-footer">
+        <el-button type="primary" @click="renderChart">确定</el-button>
+      </span>
+  </el-dialog>
+  
+  
+  
+    <el-dialog :visible="showChart" title="维护分析" width="700px" @close="closeChart" style="height: 700px; overflowY:hidden">
+      <div ref="chart" style="width: 100%;height:500px"></div>
+    </el-dialog>
 
 		<el-dialog
 			v-if="dialogVisible.B"
@@ -117,10 +133,12 @@
 <script>
 import axios from 'axios';
 import * as XLSX from 'xlsx';
+import * as echarts from 'echarts';
 export default {
 	name: 'CardComponent',
 	data() {
 		return {
+      showChart: false,
 			dialogVisible: {
 				A: false,
 				B: false,
@@ -166,11 +184,22 @@ export default {
 				{ label: '3', value: '3' }
 			],
 			options3: [
-				{ label: '1', value: '1' },
-				{ label: '2', value: '2' },
-				{ label: '3', value: '3' }
+        { label: '灭火器', value: '灭火器' },
+        { label: '烟雾报警器', value: '烟雾报警器' },
+        { label: '消防栓', value: '消防栓' },
 			],
       currentIndex: 0, // 当前显示的索引
+      analysisData:{
+      '1区1栋灭火器': {
+          x: [
+              "M01001", "M01002", "M01003", "M01004", 
+              "M01005", "M01006", "M01007", "M01008"
+          ],
+          y: [28, 28, 28, 13, 28, 28, 28, 28],
+          z: [365, 365, 365, 365, 365, 365, 365, 365],
+          w: [128, 128, 128, 40, 128, 128, 128, 128]
+        }
+      },
 		};
 	},
 	mounted() {
@@ -186,6 +215,86 @@ export default {
       this.stopAutoScroll();
   },
 	methods: {
+    closeChart(){
+      this.showChart = false;
+    },
+    renderChart(){
+      this.dialogVisible.C = false;
+      // 获取当前日期
+      let date = ''
+      let c =  this.selectedOption1 + '区' + this.selectedOption2 + '栋' + this.selectedOption3
+      this.showChart = true;
+      if (this.analysisData[c]) {
+      this.$nextTick(() => {
+        this.chart = echarts.init(this.$refs.chart);
+        // 指定图表的配置项和数据
+        let option
+          option = {
+            title: {
+              text: `${c}维护时间统计`
+            },
+            tooltip: {
+              show: true,
+              trigger: 'axis',
+              axisPointer: {
+                type: 'cross', // 显示交叉指示器
+                crossStyle: {
+                  color: '#999'
+                }
+              }
+            },
+            toolbox: {
+              right: 20,
+              feature: {
+                saveAsImage: {},
+                restore: {},
+                dataView: {},
+                dataZoom: {},
+                magicType: {
+                  type: ['line', 'bar'] // 支持切换为折线图和柱状图
+                },
+              }
+            },
+            legend: {
+                  data: ['距下一次检修时间(天)', '保质期(天)','距下一次更换时间(天)'],
+                  align: 'right',
+                  right: 10,
+                  bottom: 10
+              },
+              xAxis: {
+                  type: 'category',
+                  data: this.analysisData[c].x
+              },
+              yAxis: {
+                  type: 'value'
+              },
+              series: [
+                  {
+                      name: '距下一次检修时间(天)',
+                      type: 'bar',
+                      data: this.analysisData[c].y
+                  },
+                  {
+                      name: '保质期(天)',
+                      type: 'bar',
+                      data: this.analysisData[c].z
+                  },
+                  {
+                      name: '距下一次更换时间(天)',
+                      type: 'bar',
+                      data: this.analysisData[c].w
+                  }
+              ]
+            };
+        // 使用刚指定的配置项和数据显示图表
+        this.chart.setOption(option);
+      });
+      } else {
+        this.$message.error('暂无数据');
+        this.showChart = false;
+      }
+      console.log(c)
+    },
     startAutoScroll() {
         // 每隔一定时间滚动一次
         this.intervalId = setInterval(() => {

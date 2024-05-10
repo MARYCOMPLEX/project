@@ -5,6 +5,12 @@
     </div>
     <leftCards class='leftCards' @locate="flyToPoi" @renderGeojson='renderGeojson' style='position:absolute;left:20px;top:80px'></leftCards>
     <rightCards class='rightCards' @locate="flyToPoi" style='position:absolute;right:20px;top:80px'></rightCards>
+    <el-tooltip content="复位" placement="top">
+      <el-button style='position:absolute;bottom:10px;left:20px;background-color: #3E92E9;' 
+                 type="mini" 
+                 icon="el-icon-refresh-right" 
+                 @click='resetMap'></el-button>
+    </el-tooltip>
   </div> 
 </template>
   
@@ -18,7 +24,7 @@ import leftCards from '@/components/leftcards/leftContainer'
 import rightCards from '@/components/rightcards/rightContainer'
 import { gpsConvert } from "@/network/common.js";
 import  { SlickList, SlickItem } from "vue-slicksort";
-import geojson from '../constant.js';
+import {geojson,winInfo} from '../constant.js';
 import * as XLSX from 'xlsx';
 
 window._AMapSecurityConfig = {
@@ -46,22 +52,37 @@ export default {
       simpelInfoWindow:null,
       markers:[],
       spots:null,
+      mouseMoveHandler:null,
       spot:null,
       carts:[],
       method:null,
       loca:null,
+      prismLayer:null,
       user:null,
       geojson:null,
       layersCon:false,
       marker:'https://a.amap.com/Loca/static/loca-v2/demos/images/track_marker.png',
       locaDict: {
           "当天冷水用量": "4_7LS",
-          "自定义冷水用量": "ZDYLS",
+          "近7天冷水用量": "41_47LS",
+          "自定义时间段冷水用量": "ZDYLS",
           "当天热水用量": "4_7RS",
+          "近7天热水用量": "41_47RS",
+          "自定义时间段热水用量": "ZDYRS",
           "当天用电量": "4_7YD",
-          "当天电功率": "DGL22",
+          "自定义时间段用电量": "ZDYYD",
+          "当前电功率": "DGL22",
+          "自定义时间段电功率": "ZDYDGL",
           "当天已在宿舍人数": "4_7YZSS",
-          "当天未归人数": "4_7WG1"
+          "自定义时间段已在宿舍人数": "ZDYYZSS",
+          "当天未归宿舍人数": "4_7WZSS",
+          "自定义时间段未归宿舍人数": "ZDYWZSS",
+          "当天晚归人数": "4_7WG",
+          "自定义时间段晚归人数": "ZDYWG",
+          "当天未归人数": "4_7WG1",
+          "自定义时间段未归人数": "ZDYWG1",
+          "当天有课未出人数": "4_7YKWC",
+          "自定义时间段有课未出人数": "ZDYYKWC"
       },
 
     }
@@ -74,6 +95,15 @@ export default {
     // 十秒后执行
   },
   methods: {
+    resetMap(){
+      if (this.prismLayer) {
+        this.loca.remove(this.prismLayer.destroy());
+        this.map.off('mousemove',this.mouseMoveHandler);
+        this.mouseMoveHandler = null;
+        this.addAllPoi(this.AMap,this.map,this.geojson)
+        this.prismLayer = null;
+      }
+    },
     detail(item){
       this.spot = item
     },
@@ -144,7 +174,7 @@ export default {
             viewMode: '3D',
             mapStyle: 'amap://styles/84ba10a821298afbfc69cac6d854d241',
             zooms: [2, 20],
-            center: [112.91950, 27.89742],
+            center: [112.91150, 27.90742],
             WebGLParams: {
               preserveDrawingBuffer: true
             }
@@ -165,43 +195,44 @@ export default {
       this.geojson = geojson
       this.addAllPoi(AMap,map,this.geojson)
       // 等待十秒执行删除全部marker。
-      setTimeout(() => {
-        this.clearAllPoi()
-      }, 10000); 
-      //   再过十秒又添加上
-      setTimeout(() => {
-        this.addAllPoi(AMap,map,geojson)
-      }, 20000);
 
     },
-    renderGeojson(params){
-      this.clearAllPoi()
-      // 根据params的值，去locaDict中找到对应的值，然后去geojson中找到对应的值，然后渲染、
-      let locaDict = this.locaDict
-      let prop = locaDict[params]
+    renderGeojson(params) {
+      this.loca = null;
+      console.log('参数', params);
+      this.clearAllPoi();
+
+      // 根据params的值，去locaDict中找到对应的值，然后去geojson中找到对应的值，然后渲染
+      let locaDict = this.locaDict;
+      let prop = locaDict[params];
+
       // 计算geojson中prop字段的最大值和最小值和平均值
-      let max = 0
-      let min = 0
-      let sum = 0
+      let max = -Infinity;
+      let min = Infinity;
+      let sum = 0;
       this.geojson.features.forEach(item => {
-        let n = item.properties[prop]
-        if(n > max){
-          max = n
+        let n = item.properties[prop];
+        if (n > max) {
+          max = n;
         }
-        if(n < min){
-          min = n
+        if (n < min) {
+          min = n;
         }
-        sum += n
-      })
-      let avg = sum / this.geojson.features.length
+        sum += n;
+      });
+      let avg = sum / this.geojson.features.length;
 
-
-      console.log('locaDict',locaDict[params])
-      let loca = new this.Loca.Container({
+      console.log('locaDict', locaDict[params]);
+      this.loca = new this.Loca.Container({
         map: this.map
       });
 
-      let prismLayer = new this.Loca.PrismLayer({
+      if (this.prismLayer) {
+        this.loca.remove(this.prismLayer.destroy());
+        this.prismLayer = null;
+      }
+
+      this.prismLayer = new this.Loca.PrismLayer({
         zIndex: 10,
         opacity: 1,
         visible: true,
@@ -211,10 +242,10 @@ export default {
       let geo = new this.Loca.GeoJSONSource({
         data: this.geojson,
       });
-      
-      prismLayer.setSource(geo);
 
-      prismLayer.setStyle({
+      this.prismLayer.setSource(geo);
+
+      this.prismLayer.setStyle({
         unit: 'meter',
         sideNumber: 4,
         topColor: (index, f) => {
@@ -229,14 +260,53 @@ export default {
         radius: 10,
         height: (index, f) => {
           var props = f.properties;
-          var height = ((props[prop] - min) / max -min ) * 100
+          var height = ((props[prop] - min) / (max - min)) * 100;
           return height;
         },
         rotation: 360,
         altitude: 0,
       });
-      loca.add(prismLayer);        
+
+      this.loca.add(this.prismLayer);
+
+      // 初始化标记
+      var clickInfo = new AMap.Marker({
+        anchor: 'bottom-center',
+        position: [116.396923, 39.918203, 0],
+      });
+      clickInfo.setMap(this.map);
+      clickInfo.hide();
+
+      // 鼠标移动事件
+      const handleMouseMove = (e) => {
+        var feat = this.prismLayer.queryFeature(e.pixel.toArray());
+        if (feat) {
+          clickInfo.show();
+          var props = feat.properties;
+          var height = Math.max(100, ((props[prop] - min) / (max - min)) * 100);
+          clickInfo.setPosition([feat.coordinates[0], feat.coordinates[1], height]);
+          clickInfo.setContent(
+            `<div style="text-align: center; height: 20px; width: 150px; 
+            color:${props[prop] > avg ? '#ff0026' : '#01a700'}; 
+            font-size: 14px;
+            font-weight:bold;
+            ">` +
+            props['ssname'] + ': ' + props[prop] + ' </div>'
+          );
+        } else {
+          clickInfo.hide();
+        }
+      };
+
+      // 绑定事件
+      this.map.on('mousemove', handleMouseMove);
+
+      // 保存事件处理器以便取消监听
+      this.mouseMoveHandler = handleMouseMove;
+
     },
+
+
     addMarker(AMap,map,pos,detail){
       let marker = new AMap.Marker({
           position: pos, // 标记的坐标
@@ -248,13 +318,30 @@ export default {
           title: detail.name,
           map: map
       });
-      
-          // eslint-disable-next-line no-undef
+      let otherInfo = winInfo.find(item => item.楼栋名称 === detail.name)
+      // 根据OtherInfo数据信息创建信息窗体，格式如下
+      // 	1区1栋
+      // 宿舍容纳人数：260
+      // 当前宿舍人数：185
+      // 未到宿舍人数：75
+      // 今日冷水用量：58吨
+      // 今日热水用量：21吨
+      // 今日用电量：434度
+      // 管理员姓名：张一
+      // 管理员电话：17533385890
+      let content = `<div id="infoContent" style="color: red;">
+          <div style="font-size: 16px; font-weight: bold; margin-bottom: 5px;">${detail.name}</div>
+          <div>宿舍容纳人数：${otherInfo.宿舍容纳人数}人</div>
+          <div>当前宿舍人数：${otherInfo.当前宿舍人数}人</div>
+          <div>未到宿舍人数：${otherInfo.未到宿舍人数}人</div>
+          <div>今日冷水用量：${otherInfo.今日冷水用量}</div>
+          <div>今日热水用量：${otherInfo.今日热水用量}</div>
+          <div>今日用电量：${otherInfo.今日用电量}</div>
+          <div>管理员姓名：${otherInfo.管理员姓名}</div>
+          <div>管理员电话：${otherInfo.管理员电话}</div>
+      </div>`
       let InfoWindow = new AMap.InfoWindow({
-        content: `<div id="infoContent" style="color: red;">
-            <div style="font-size: 16px; font-weight: bold; margin-bottom: 5px;">${detail.name}</div>
-            <div>暂无内容</div>
-        </div>`,
+        content: content,
         offset: new this.AMap.Pixel(0, -31)
       });
       marker.on('click', function() {

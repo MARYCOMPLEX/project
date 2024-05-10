@@ -3,69 +3,53 @@
 		<div class="card">
 			<div class="card-top">
 				<h1 class="title">异常预警</h1>
-				<span class="button-text" @click="showDialog('A')">数据查询</span>
+				<span class="button-text" @click="showDialog('A')">警情处理</span>
 			</div>
 			<div class="card-content" ref='content'>
-        <div v-for="(device, index) in security_device" :key="index" class='scroll'>{{ device.show }}</div>
+        <div v-for="(alert, index) in alerts" :key="index" class="scroll" :class="getAlertLevelClass(alert)">
+          {{ alert['预警信息'] }}
+        </div>
 			</div>
 		</div>
 		<!-- 弹出框容器 -->
-		<el-dialog
-			v-if="dialogVisible.A"
-			title="数据查询"
-			:visible.sync="dialogVisible.A"
-			width="50%">
-			<div class="select-container">
-				<el-select v-model="selectedOption1" placeholder="区域">
-					<el-option
-						v-for="(option, index) in options1"
-						:key="index"
-						:label="option.label"
-						:value="option.value">
-					</el-option>
-				</el-select>
-				<el-select v-model="selectedOption2" placeholder="楼栋">
-					<el-option
-						v-for="(option, index) in options2"
-						:key="index"
-						:label="option.label"
-						:value="option.value">
-					</el-option>
-				</el-select>
-			</div>
-			<div class="result-container" v-if='searchResult'>
-				<div>姓名: {{ searchResult.Name}}</div>
-				<div>年龄: {{ searchResult.Age}}</div>
-				<div>性别: {{ searchResult.Gender}}</div>
-				<div>电话: {{ searchResult.Phone }}</div>
-			</div>
-			<span slot="footer" class="dialog-footer">
-				<el-button @click="locate">定位</el-button>
-				<el-button type="primary" @click="search">查询</el-button>
-			</span>
-		</el-dialog>
+    <el-dialog
+      :visible.sync="dialogVisible.A"
+      title="预警信息"
+      width="50%"
+      :append-to-body="true"
+      :style="{ 'max-height': '80vh', 'overflow-y': 'auto' }"
+    >
+      <el-scrollbar wrap-class="scroll-wrapper" view-class="scroll-view">
+        <el-table :data="alerts" style="width: 100%">
+          <el-table-column prop="时间" label="时间"></el-table-column>
+          <el-table-column prop="所在楼栋" label="所在楼栋"></el-table-column>
+          <el-table-column prop="预警级别" label="预警级别">
+            <template slot-scope="scope">
+              <el-button
+                :type="getAlertLevelButtonType(scope.row['预警级别'])"
+                size="mini"
+              >
+                {{ scope.row['预警级别'] }}
+              </el-button>
+            </template>
+          </el-table-column>
+          <el-table-column prop="预警信息" label="预警信息"></el-table-column>
+          <el-table-column label="操作">
+            <template slot-scope="scope">
+              <el-button type="danger" @click="handleAlert(scope.$index)">处理</el-button>
+            </template>
+          </el-table-column>
+        </el-table>
+      </el-scrollbar>
+    </el-dialog>
 
-		<el-dialog
-			v-if="dialogVisible.B"
-			title="异常预警信息"
-			:visible.sync="dialogVisible.B"
-			width="50%" 
-			style="max-height:500px;overflowY:auto">
-			<div class="alert-list">
-				<ul>
-					<!-- 遍历预警信息列表 -->
-					<li v-for="(alert, index) in alertList" :key="index" @click="showDetail(index)" class="alert-item">
-						{{ alert.time + ':' + alert.building + alert.name + alert.detail}}
-					</li>
-				</ul>
-			</div>
-		</el-dialog>
 
 		<el-dialog
 			v-if="dialogVisible.C"
 			title="数据导出"
 			:visible.sync="dialogVisible.C"
-			width="50%">
+			width="50%"
+      style='height:800;overflowY:hidden'>
 			<div class="select-container">
 				<el-select v-model="selectedOption1" placeholder="区域">
 					<el-option
@@ -116,6 +100,112 @@ export default {
 			v: 0,
 			a: 0,
 			w: 0,
+      alerts:[
+        {
+            "时间": "2024/4/7 23:59",
+            "所在楼栋": "1区1栋",
+            "预警级别": "一级",
+            "预警信息": "赵六3天未回宿舍",
+            "学生/管理员姓名": "赵六",
+            "学生/管理员电话": "15759179592"
+        },
+        {
+            "时间": "2024/4/10 22:26",
+            "所在楼栋": "2区5栋",
+            "预警级别": "一级",
+            "预警信息": "4楼烟雾报警器报警",
+            "学生/管理员姓名": "张十一",
+            "学生/管理员电话": "15675614261"
+        },
+        {
+            "时间": "2024/4/10 22:28",
+            "所在楼栋": "2区5栋",
+            "预警级别": "一级",
+            "预警信息": "4楼消防栓被使用",
+            "学生/管理员姓名": "张十一",
+            "学生/管理员电话": "15675614261"
+        },
+        {
+            "时间": "2024/4/12 18:30",
+            "所在楼栋": "5区3栋",
+            "预警级别": "一级",
+            "预警信息": "3楼灭火器被使用",
+            "学生/管理员姓名": "张三十四",
+            "学生/管理员电话": "15591363854"
+        },
+        {
+            "时间": "2024/4/5 21:12",
+            "所在楼栋": "1区3栋",
+            "预警级别": "二级",
+            "预警信息": "1区1栋108宿舍冷水用量超标",
+            "学生/管理员姓名": "张三",
+            "学生/管理员电话": "18869088750"
+        },
+        {
+            "时间": "2024/4/6 22:12",
+            "所在楼栋": "1区6栋",
+            "预警级别": "二级",
+            "预警信息": "1区6栋408宿舍用电功率过高",
+            "学生/管理员姓名": "张六",
+            "学生/管理员电话": "17647577204"
+        },
+        {
+            "时间": "2024/4/7 22:45",
+            "所在楼栋": "3区1栋",
+            "预警级别": "二级",
+            "预警信息": "3区1栋101宿舍热水用量超标",
+            "学生/管理员姓名": "张十八",
+            "学生/管理员电话": "15055213577"
+        },
+        {
+            "时间": "2024/4/7 23:59",
+            "所在楼栋": "4区2栋",
+            "预警级别": "二级",
+            "预警信息": "4区2栋311宿舍24小时连续用水",
+            "学生/管理员姓名": "张二十五",
+            "学生/管理员电话": "17051336024"
+        },
+        {
+            "时间": "2024/4/8 22:06",
+            "所在楼栋": "5区4栋",
+            "预警级别": "二级",
+            "预警信息": "5区4栋115宿舍用电功率过高",
+            "学生/管理员姓名": "张三十五",
+            "学生/管理员电话": "15554318367"
+        },
+        {
+            "时间": "2024/4/9 10:39",
+            "所在楼栋": "6区3栋",
+            "预警级别": "二级",
+            "预警信息": "6区3栋S06003号摄像头不在线",
+            "学生/管理员姓名": "张四十二",
+            "学生/管理员电话": "15788509278"
+        },
+        {
+            "时间": "2024/4/9 21:39",
+            "所在楼栋": "3区5栋",
+            "预警级别": "二级",
+            "预警信息": "3区5栋203宿舍热水用量超标",
+            "学生/管理员姓名": "张二十二",
+            "学生/管理员电话": "14562884869"
+        },
+        {
+            "时间": "2024/4/10 23:59",
+            "所在楼栋": "7区5栋",
+            "预警级别": "二级",
+            "预警信息": "7区5栋30个灭火器还有3天过期",
+            "学生/管理员姓名": "张五十一",
+            "学生/管理员电话": "15060080303"
+        },
+        {
+            "时间": "2024/4/11 12:45",
+            "所在楼栋": "8区16栋",
+            "预警级别": "二级",
+            "预警信息": "8区16栋M08003号灭火器不在线",
+            "学生/管理员姓名": "张七十二",
+            "学生/管理员电话": "17262308159"
+        }
+    ],
 			totalE: 0,
 			hot_consum:'',
 			cool_consum:'',
@@ -170,11 +260,24 @@ export default {
       this.stopAutoScroll();
   },
 	methods: {
+    handleAlert(index) {
+      // 处理预警信息，这里可以根据 index 删除对应的预警信息
+      this.alerts.splice(index, 1);
+    },
+    getAlertLevelStyle(level) {
+      return level === '一级' ? { color: 'red' } : { color: 'yellow' };
+    },
+    getAlertLevelClass(alert) {
+      return alert['预警级别'] === '一级' ? 'red' : 'yellow';
+    },
     startAutoScroll() {
         // 每隔一定时间滚动一次
         this.intervalId = setInterval(() => {
             this.currentIndex = (this.currentIndex + 4) % this.security_device.length;
         }, 3000); // 3000毫秒（3秒）滚动一次
+    },
+    getAlertLevelButtonType(level) {
+      return level === '一级' ? 'danger' : 'warning';
     },
     stopAutoScroll() {
         // 清除定时器
@@ -388,7 +491,7 @@ export default {
 
 }
 .scroll{
-  animation: scroll 10s linear infinite; 
+  animation: scroll 9s linear infinite; 
 }
 
 @keyframes scroll {
@@ -396,7 +499,7 @@ export default {
       transform: translateY(0); /* 初始状态：不偏移 */
   }
   100% {
-      transform: translateY(-1000%); /* 终止状态：向上偏移100%的高度 */
+      transform: translateY(-460%); /* 终止状态：向上偏移100%的高度 */
   }
 }
 
@@ -421,12 +524,30 @@ export default {
 .alert-list::-webkit-scrollbar {
 	width: 10px;
 }
-
+.scroll-wrapper {
+  height: 500px;
+  overflow-y: auto;
+}
 .alert-list::-webkit-scrollbar-track {
 	background-color: #f2f2f2;
 	border-radius: 5px;
 }
+.scroll-wrapper {
+  max-height: 600px;
+  overflow-y: hidden;
+}
 
+.scroll-view {
+  max-height: 600px;
+}
+.red {
+  color: red;
+  font-weight: bold;
+}
+.yellow {
+  color: yellow;
+  font-weight: bold;
+}
 .alert-list::-webkit-scrollbar-thumb {
 	background-color: #888;
 	border-radius: 5px;

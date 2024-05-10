@@ -18,122 +18,216 @@
 		</div>
 		<!-- 弹出框容器 -->
 		<el-dialog
-		v-if="dialogVisible.A"
-		title="数据查询"
-		:visible.sync="dialogVisible.A"
-		width="50%">
-		<div class="select-container">
-			<div>
-				<span>选择区域：</span>
-				<el-select v-model="selectedOption1">
-					<el-option
-						v-for="(option, index) in options1"
-						:key="index"
-						:label="option.label"
-						:value="option.value">
-					</el-option>
-				</el-select>
-			</div>
-			<div>
-				<span>选择楼栋：</span>
-				<el-select v-model="selectedOption2">
-					<el-option
-						v-for="(option, index) in options2"
-						:key="index"
-						:label="option.label"
-						:value="option.value">
-					</el-option>
-				</el-select>
-			</div>
-			<div>
-				<span>选择宿舍：</span>
-				<el-select v-model="selectedOption3">
-					<el-option
-						v-for="(option, index) in options3"
-						:key="index"
-						:label="option.label"
-						:value="option.value">
-					</el-option>
-				</el-select>
-			</div>
-		</div>
-		<div class="result-container" v-if='searchResult'>
-			<div>电压: {{ searchResult.v}}</div>
-			<div>电流: {{ searchResult.a}}</div>
-			<div>功率: {{ searchResult.w}}</div>
-			<div>用电量: {{ searchResult.totalE }}</div>
-		</div>
-		<span slot="footer" class="dialog-footer">
-			<el-button @click="locate">定位</el-button>
-			<el-button type="primary" @click="search">查询</el-button>
-		</span>
+      v-if="dialogVisible.A"
+      title="数据查询"
+      :visible.sync="dialogVisible.A"
+      width="50%">
+      <div class="select-container">
+        <div>
+          <span>选择区域：</span>
+          <el-select v-model="selectedOption1">
+            <el-option
+              v-for="(option, index) in options1"
+              :key="index"
+              :label="option.label"
+              :value="option.value">
+            </el-option>
+          </el-select>
+        </div>
+        <div>
+          <span>选择楼栋：</span>
+          <el-select v-model="selectedOption2">
+            <el-option
+              v-for="(option, index) in options2"
+              :key="index"
+              :label="option.label"
+              :value="option.value">
+            </el-option>
+          </el-select>
+        </div>
+        <div>
+          <span>选择宿舍：</span>
+          <el-select v-model="selectedOption3">
+            <el-option
+              v-for="(option, index) in options3"
+              :key="index"
+              :label="option.label"
+              :value="option.value">
+            </el-option>
+          </el-select>
+        </div>
+      </div>
+      <div class="result-container" v-if='searchResult'>
+        <div>电压: {{ searchResult.v}}</div>
+        <div>电流: {{ searchResult.a}}</div>
+        <div>功率: {{ searchResult.w}}</div>
+        <div>用电量: {{ searchResult.totalE }}</div>
+      </div>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="locate">定位</el-button>
+        <el-button type="primary" @click="search">查询</el-button>
+      </span>
 	</el-dialog>
-	
-
-		<el-dialog
-			v-if="dialogVisible.B"
-			title="异常预警信息"
-			:visible.sync="dialogVisible.B"
-			width="50%" 
-			style="max-height:500px;overflowY:auto">
-			<div class="alert-list">
-				<ul>
-					<!-- 遍历预警信息列表 -->
-					<li v-for="(alert, index) in alertList" :key="index" @click="showDetail(index)" class="alert-item">
-						{{ alert.time + ':' + alert.building + alert.name + alert.detail}}
-					</li>
-				</ul>
-			</div>
-		</el-dialog>
-
-		<el-dialog
-			v-if="dialogVisible.C"
-			title="数据导出"
-			:visible.sync="dialogVisible.C"
-			width="50%">
-			<div class="select-container">
-				<el-select v-model="selectedOption1" placeholder="区域">
-					<el-option
-						v-for="(option, index) in options1"
-						:key="index"
-						:label="option.label"
-						:value="option.value">
-					</el-option>
-				</el-select>
-				<el-select v-model="selectedOption2" placeholder="楼栋">
-					<el-option
-						v-for="(option, index) in options2"
-						:key="index"
-						:label="option.label"
-						:value="option.value">
-					</el-option>
-				</el-select>
-				<el-select v-model="selectedOption3" placeholder="宿舍">
-					<el-option
-						v-for="(option, index) in options3"
-						:key="index"
-						:label="option.label"
-						:value="option.value">
-					</el-option>
-				</el-select>
-			</div>
-			<div class="result-container" v-if='searchResult'>
-				<div>电压: {{ searchResult.v}}</div>
-				<div>电流: {{ searchResult.a}}</div>
-				<div>功率: {{ searchResult.w}}</div>
-				<div>用电量: {{ searchResult.totalE }}</div>
-			</div>
-			<span slot="footer" class="dialog-footer">
-				<el-button type="primary" @click="exportToExcel">导出</el-button>
-				<el-button type="primary" @click="search">查询</el-button>
-			</span>
-		</el-dialog>
+    <el-dialog
+      v-if="dialogVisible.B"
+      title="空间展示"
+      :visible.sync="dialogVisible.B"
+      width="50%">
+      <div class="select-container">
+        <div>
+          <div class="select-title">
+            <span>选择类型：</span>
+          </div>
+          <el-select v-model="spaceOption1" @change="onTypeChange">
+            <el-option
+              v-for="(option, index) in typeOptions"
+              :key="index"
+              :label="option.label"
+              :value="option.value">
+            </el-option>
+          </el-select>
+        </div>
+        <div>
+          <div class="select-title">
+            <span>日期选择：</span>
+          </div>
+          <el-select v-model="spaceOption2">
+            <el-option
+              v-for="(option, index) in spaceOptions2"
+              :key="index"
+              :label="option.label"
+              :value="option.value">
+            </el-option>
+          </el-select>
+        </div>
+        <!-- 根据选择的日期范围显示日期选择器 -->
+        <div v-if="spaceOption2 === '自定义时间段'">
+          <div>
+            <div class="select-title">
+              <span>起始日期：</span>
+            </div>
+            <el-date-picker
+              v-model="startDate"
+              type="date"
+              placeholder="选择日期">
+            </el-date-picker>
+          </div>
+          <div>
+            <div class="select-title">
+              <span>结束日期：</span>
+            </div>
+            <el-date-picker
+              v-model="endDate"
+              type="date"
+              placeholder="选择日期">
+            </el-date-picker>
+          </div>
+        </div>
+      </div>
+      <span slot="footer" class="dialog-footer">
+        <el-button type="primary" @click="renderGeojson">确定</el-button>
+      </span>
+    </el-dialog>
+    <el-dialog
+      v-if="dialogVisible.C"
+      title="载荷分析"
+      :visible.sync="dialogVisible.C"
+      width="50%" 
+      style="max-height:600px;overflowY:hidden">
+      <div class="select-container">
+      
+      <div>
+        <div class='select-title'>
+          <span >选择类型：</span>
+        </div>
+        <el-select v-model="spaceOption1">
+          <el-option
+            v-for="(option, index) in spaceOptions1"
+            :key="index"
+            :label="option.label"
+            :value="option.value">
+          </el-option>
+        </el-select>
+      </div>
+      <el-row>
+        <el-col :span="12">
+      <div>
+        <span>选择区域：</span>
+        <el-select v-model="selectedOption1">
+          <el-option
+            v-for="(option, index) in options1"
+            :key="index"
+            :label="option.label"
+            :value="option.value">
+          </el-option>
+        </el-select>
+      </div>
+      </el-col>
+      <el-col :span="12">
+        <div>
+          <span>选择楼栋：</span>               
+          <el-select v-model="selectedOption2">
+            <el-option
+              v-for="(option, index) in options2"
+              :key="index"
+              :label="option.label"
+              :value="option.value">
+            </el-option>
+          </el-select>
+        </div>
+      </el-col>
+      </el-row>
+        <div>
+          <div class='select-title'>
+            <span >日期选择：</span>
+          </div>
+          <el-select v-model="analysisOption2">
+            <el-option
+              v-for="(option, index) in analysisOptions2"
+              :key="index"
+              :label="option.label"
+              :value="option.value">
+            </el-option>
+          </el-select>
+        </div>
+        <!-- 根据选择的日期范围显示日期选择器 -->
+        <div v-if="analysisOption2 === '自定义时间段'">
+          <div>
+            <div class='select-title'>
+              <span >起始日期：</span>
+            </div>
+            <el-date-picker
+              v-model="startDate"
+              type="date"
+              placeholder="选择日期">
+            </el-date-picker>
+          </div>
+          <div>
+            <div class='select-title'>
+              <span >结束日期：</span>
+            </div>
+            <el-date-picker
+              v-model="endDate"
+              type="date"
+              placeholder="选择日期">
+            </el-date-picker>
+          </div>
+        </div>
+      </div>
+      <span slot="footer" class="dialog-footer">
+        <el-button type="primary" @click="renderChart">确定</el-button>
+      </span>
+  </el-dialog>
+    <el-dialog :visible="showChart" title="用电统计" width="700px" @close="closeChart" style="height: 700px; overflowY:hidden">
+      <div ref="chart" style="width: 100%;height:500px"></div>
+    </el-dialog>
 	</div>
 </template>
 
 <script>
 import axios from 'axios';
-import * as XLSX from 'xlsx';
+import * as echarts from 'echarts';
+
 export default {
 	name: 'CardComponent',
 	data() {
@@ -143,9 +237,65 @@ export default {
 				B: false,
 				C: false
 			},
-			alertList: [ // 预警信息列表
-				// 其他预警信息...
-			],
+      //当天，近7天，近1个月，自定义时间段
+      spaceOptions2: [
+        { label: '当天', value: '当天' },
+        { label: '自定义时间段', value: '自定义时间段' }
+      ],
+      showChart: false,
+      analysisOptions1: [
+        { label: '热水用量', value: '热水用量' },
+        { label: '冷水用量', value: '冷水用量' }
+      ],
+      analysisOption2: '',
+      analysisOptions2: [
+        { label: '当天', value: '当天' },
+        { label: '自定义时间段', value: '自定义时间段' }
+      ],
+      analysisData:{
+        '1区1栋当天电功率':
+        {
+            x: [
+                "0-2", "2-4", "4-6", "6-8", "8-10", "10-12",
+                "12-14", "14-16", "16-18", "18-20", "20-22", "22-24"
+            ],
+            y: [
+                256, 124, 115, 815, 748, 804,
+                785, 818, 854, 814, 1512, 856
+            ]
+        },
+        '1区1栋当天用电量':
+        {
+            x: [
+                "0-2", "2-4", "4-6", "6-8", "8-10", "10-12",
+                "12-14", "14-16", "16-18", "18-20", "20-22", "22-24"
+            ],
+            y: [
+                15, 8, 7, 39, 28, 33,
+                49, 34, 41, 46, 52, 57
+            ]
+        },
+      },
+      spaceOption1: '',
+      spaceOption2: '',
+      startDate: '',
+      endDate: '',
+      typeOptions: [
+        { label: '电功率', value: '电功率' },
+        { label: '用电量', value: '用电量' }
+      ],
+      spaceOptions1: [
+        { label: '电功率', value: '电功率' },
+        { label: '用电量', value: '用电量' }
+      ],
+      analysisOptions1: [
+        { label: '电功率', value: '电功率' },
+        { label: '用电量', value: '用电量' }
+      ],
+      analysisOptions2:[
+        { label: '当天', value: '当天' },
+        { label: '自定义时间段', value: '自定义时间段' }
+      ],
 			v: 0,
 			a: 0,
 			w: 0,
@@ -196,6 +346,129 @@ export default {
 
 	},
 	methods: {
+    renderChart(){
+      this.dialogVisible.C = false;
+      // 获取当前日期
+      let date = ''
+      if(this.analysisOption2==='当天'){
+        date = new Date().toLocaleDateString()
+      }
+      let c =  this.selectedOption1 + '区' + this.selectedOption2 + '栋' + this.analysisOption2 + this.spaceOption1
+      let title = this.selectedOption1 + '区' + this.selectedOption2 + '栋' + date === '' ? this.analysisOption2:date + this.spaceOption1
+      this.showChart = true;
+      if (this.analysisData[c]) {
+      this.$nextTick(() => {
+        this.chart = echarts.init(this.$refs.chart);
+        // 指定图表的配置项和数据
+        const option = {
+          title: {
+            text: `${c}统计`
+          },
+          tooltip: {
+            show: true,
+            trigger: 'axis',
+            axisPointer: {
+              type: 'cross', // 显示交叉指示器
+              crossStyle: {
+                color: '#999'
+              }
+            }
+          },
+          toolbox: {
+            right: 20,
+            feature: {
+              saveAsImage: {},
+              restore: {},
+              dataView: {},
+              dataZoom: {},
+              magicType: {
+                type: ['line', 'bar'] // 支持切换为折线图和柱状图
+              },
+            }
+          },
+          xAxis: {
+            type: 'category',
+            data: this.analysisData[c].x,
+            name: '时间', // 设置横坐标名称
+            axisPointer: {
+              type: 'shadow' // 鼠标悬停时显示阴影
+            }
+          },
+          yAxis: [
+            {
+              type: 'value',
+              name: '用量', // 设置纵坐标名称
+              min: 0,
+              position: 'left',
+              axisLine: {
+                lineStyle: {
+                  color: '#5470C6'
+                }
+              }
+            },
+            {
+              type: 'value',
+              name: '数值', // 设置第二纵坐标名称
+              min: 0,
+              position: 'right',
+              axisLine: {
+                lineStyle: {
+                  color: '#91CC75'
+                }
+              }
+            }
+          ],
+          series: [
+            {
+              name: '用量',
+              type: 'bar',
+              data: this.analysisData[c].y,
+              itemStyle: {
+                color: '#5470C6'
+              },
+              yAxisIndex: 0 // 关联到第一个 y 轴
+            },
+            {
+              name: '趋势',
+              type: 'line',
+              data: this.analysisData[c].y,
+              itemStyle: {
+                color: '#91CC75'
+              },
+              yAxisIndex: 1 // 关联到第二个 y 轴
+            }
+          ]
+        };
+        // 使用刚指定的配置项和数据显示图表
+        this.chart.setOption(option);
+      });
+      } else {
+        this.$message.error('暂无数据');
+        this.showChart = false;
+      }
+    },
+    closeChart(){
+      this.showChart = false;
+    },
+    renderGeojson(){
+      this.dialogVisible.B = false;
+      this.$emit('renderGeojson', this.spaceOption2 + this.spaceOption1)
+    },
+    onTypeChange(value) {
+      if (value === '电功率') {
+        this.spaceOptions2 = [
+          { label: '当前', value: '当前' },
+          { label: '自定义时间段', value: '自定义时间段' }
+        ];
+      } else if (value === '用电量') {
+        this.spaceOptions2 = [
+          { label: '当天', value: '当天' },
+          { label: '自定义时间段', value: '自定义时间段' }
+        ];
+      }
+      // 清空当前选择的日期选项
+      this.spaceOption2 = '';
+    },
 		showDialog(button) {
 			// 关闭其他对话框
 			this.searchResult = '';
@@ -242,33 +515,11 @@ export default {
       console.log(this.searchResult)
 			
 		},
-		exportToExcel() {
-			if(this.searchResult === '') {
-				this.$message({
-					message: '请先查询数据',
-					type: 'warning'
-				});
-				return;
-			}
-			// 制作中文字段
-			let data = {
-        '电压': this.searchResult.v,
-        '电流': this.searchResult.a,
-        '功率': this.searchResult.w,
-        '用电量': this.searchResult.totalE
-			}
-			var wb = XLSX.utils.book_new();
-			var ws = XLSX.utils.json_to_sheet([data]);
-			XLSX.utils.book_append_sheet(wb, ws, "sheet1");
-			XLSX.writeFile(wb, this.selectedOption1 + '区' + this.selectedOption2 + '栋' + this.selectedOption3 + '宿舍用电数据'+'.xlsx');
-			// 关闭对话框
-			this.dialogVisible.C = false;
-		},
 		showDetail(index) {
 			// 点击预警信息，展示详情
 			// 从Sushe数组中找到对应的宿舍信息
 			// 从Admin数组中找到对应的管理员信息
-      console.log('this.alertList[index]',this.alertList[index])
+      		console.log('this.alertList[index]',this.alertList[index])
 			this.dialogVisible.B = false;
 			let admin = this.Admin.find(item => item.Manage_building === this.alertList[index].building);
 			let sushe = this.Sushe.find(item => item.Locate_Building === this.alertList[index].building);
@@ -283,7 +534,6 @@ export default {
 			
 		},
 		showAlert(){
-			this.getAllAlert();
 			this.showDialog('B');
 		},
 		getAllEle(){

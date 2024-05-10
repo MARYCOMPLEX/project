@@ -75,15 +75,90 @@
       title="流量分析"
       :visible.sync="dialogVisible.C"
       width="50%" 
-      style="max-height:500px;overflowY:auto">
-      <div class="alert-list">
-        <ul>
-          <!-- 遍历预警信息列表 -->
-          <li v-for="(alert, index) in alertList" :key="index" @click="showDetail(index)" class="alert-item">
-            {{ alert.time + ':' + alert.building + alert.name + alert.detail}}
-          </li>
-        </ul>
+      style="max-height:600px;overflowY:hidden">
+      <div class="select-container">
+        
+        <div>
+          <div class='select-title'>
+            <span >选择用水类型：</span>
+          </div>
+          <el-select v-model="spaceOption1">
+            <el-option
+              v-for="(option, index) in spaceOptions1"
+              :key="index"
+              :label="option.label"
+              :value="option.value">
+            </el-option>
+          </el-select>
+        </div>
+      <el-row>
+        <el-col :span="12">
+      <div>
+        <span>选择区域：</span>
+        <el-select v-model="selectedOption1">
+          <el-option
+            v-for="(option, index) in options1"
+            :key="index"
+            :label="option.label"
+            :value="option.value">
+          </el-option>
+        </el-select>
       </div>
+    </el-col>
+    <el-col :span="12">
+      <div>
+        <span>选择楼栋：</span>               
+        <el-select v-model="selectedOption2">
+          <el-option
+            v-for="(option, index) in options2"
+            :key="index"
+            :label="option.label"
+            :value="option.value">
+          </el-option>
+        </el-select>
+      </div>
+    </el-col>
+    </el-row>
+        <div>
+          <div class='select-title'>
+            <span >日期选择：</span>
+          </div>
+          <el-select v-model="analysisOption2">
+            <el-option
+              v-for="(option, index) in analysisOptions2"
+              :key="index"
+              :label="option.label"
+              :value="option.value">
+            </el-option>
+          </el-select>
+        </div>
+        <!-- 根据选择的日期范围显示日期选择器 -->
+        <div v-if="analysisOption2 === '自定义时间段'">
+          <div>
+            <div class='select-title'>
+              <span >起始日期：</span>
+            </div>
+            <el-date-picker
+              v-model="startDate"
+              type="date"
+              placeholder="选择日期">
+            </el-date-picker>
+          </div>
+          <div>
+            <div class='select-title'>
+              <span >结束日期：</span>
+            </div>
+            <el-date-picker
+              v-model="endDate"
+              type="date"
+              placeholder="选择日期">
+            </el-date-picker>
+          </div>
+        </div>
+      </div>
+      <span slot="footer" class="dialog-footer">
+        <el-button type="primary" @click="renderChart">确定</el-button>
+      </span>
     </el-dialog>
 
     <el-dialog
@@ -146,6 +221,9 @@
         <el-button type="primary" @click="renderGeojson">确定</el-button>
       </span>
   </el-dialog>
+  <el-dialog :visible="showChart" title="用水量统计" width="700px" @close="closeChart" style="height: 700px; overflowY:hidden">
+    <div ref="chart" style="width: 100%;height:500px"></div>
+  </el-dialog>
   
   
   </div>
@@ -153,6 +231,7 @@
 
 <script>
 import axios from 'axios';
+import * as echarts from 'echarts';
 import * as XLSX from 'xlsx';
 export default {
   name: 'CardComponent',
@@ -183,6 +262,7 @@ export default {
       cool_water: '',
       Sushe:[],
       Admin:[],
+      showChart: false,
       // options1八个选项
       options1: [
         { label: '1', value: '1' },
@@ -194,6 +274,7 @@ export default {
         { label: '7', value: '7' },
         { label: '8', value: '8' }
       ],
+      chart: null,
       options2: [
         { label: '1', value: '1' },
         { label: '2', value: '2' },
@@ -207,6 +288,8 @@ export default {
       spaceOption1: '',
       spaceOption2: '',
       spaceOption3: '',
+      analysisOption1: '',
+      analysisOption2: '',
       spaceOptions1: [
         { label: '热水用量', value: '热水用量' },
         { label: '冷水用量', value: '冷水用量' }
@@ -214,7 +297,6 @@ export default {
       //当天，近7天，近1个月，自定义时间段
       spaceOptions2: [
         { label: '当天', value: '当天' },
-        { label: '近7天', value: '近7天' },
         { label: '近1个月', value: '近1个月' },
         { label: '自定义时间段', value: '自定义时间段' }
       ],
@@ -223,6 +305,69 @@ export default {
         { label: '2020-01-02', value: '2020-01-02' },
         { label: '2020-01-03', value: '2020-01-03' }
       ],
+      analysisOptions1: [
+        { label: '热水用量', value: '热水用量' },
+        { label: '冷水用量', value: '冷水用量' }
+      ],
+      analysisOptions2:[
+        { label: '当天', value: '当天' },
+        { label: '近1个月', value: '近1个月' },
+        { label: '近1年', value: '近1年' },
+        { label: '自定义时间段', value: '自定义时间段' }
+      ],
+      analysisData:{
+        '1区1栋当天冷水用量':
+        {
+          x:['0-2', '2-4', '4-6', '6-8', '8-10', '10-12', '12-14', '14-16', '16-18', '18-20', '20-22', '22-24'],
+          y:[0.5, 0.2, 0.1, 10, 6, 9, 8, 7, 5, 6, 15, 8]
+        },
+        '1区1栋近1个月冷水用量':
+        {
+            x: [
+                "4月1日", "4月2日", "4月3日", "4月4日", "4月5日", "4月6日", "4月7日", "4月8日", "4月9日", "4月10日",
+                "4月11日", "4月12日", "4月13日", "4月14日", "4月15日", "4月16日", "4月17日", "4月18日", "4月19日", "4月20日",
+                "4月21日", "4月22日", "4月23日", "4月24日", "4月25日", "4月26日", "4月27日", "4月28日", "4月29日", "4月30日"
+            ],
+            y: [
+                58, 57, 60, 54, 63, 82, 85, 56, 58, 64,
+                66, 68, 88, 85, 69, 73, 68, 72, 70, 87,
+                90, 71, 73, 79, 76, 74, 89, 95, 79, 81
+            ]
+        },
+        '1区1栋近1年冷水用量':
+        {
+            x: [
+                "1月", "2月", "3月", "4月", "5月", "6月",
+                "7月", "8月", "9月", "10月", "11月", "12月"
+            ],
+            y: [
+                2154, 2213, 2286, 2198, 2300, 2375,
+                2489, 2567, 2475, 2354, 2215, 2189
+            ]
+        },
+        '1区1栋自定义时间段冷水用量':
+        {
+          x: [
+                "1月", "2月", "3月", "4月", "5月", "6月",
+                "7月", "8月", "9月", "10月", "11月", "12月"
+            ],
+            y: [
+                2154, 2213, 2286, 2198, 2300, 2375,
+                2489, 2567, 2475, 2354, 2215, 2189
+            ]
+        },
+        '1区1栋近1年热水用量':
+        {
+            x: [
+                "1月", "2月", "3月", "4月", "5月", "6月",
+                "7月", "8月", "9月", "10月", "11月", "12月"
+            ],
+            y: [
+                495, 532, 499, 465, 438, 385,
+                314, 287, 294, 342, 445, 486
+            ]
+        },
+      },
     };
   },
   mounted() {
@@ -241,6 +386,63 @@ export default {
       });
       // 打开对应的对话框
       this.dialogVisible[button] = true;
+    },
+    renderChart(){
+      this.dialogVisible.C = false;
+      let c =  this.selectedOption1 + '区' + this.selectedOption2 + '栋' + this.analysisOption2 + this.spaceOption1
+      this.showChart = true;
+      if(this.analysisData[c]){
+        this.$nextTick(() => {
+        this.chart = echarts.init(this.$refs.chart);
+        // 指定图表的配置项和数据
+        const option = {
+          title: {
+            text: `${c}统计`
+          },
+          tooltip: {
+                show: true,
+                trigger: 'axis',
+                formatter: '{c}T',
+                axisPointer: {
+                    type: 'shadow',
+                }
+            },
+          toolbox: {
+              right: 20,
+              feature: {
+                  saveAsImage: {},
+                  restore: {},
+                  dataView: {},
+                  dataZoom: {},
+                  magicType: {
+                      type: ['bar']
+                  },
+              }
+          },
+          xAxis: {
+            type: 'category',
+            data: this.analysisData[c].x
+          },
+          yAxis: {
+            type: 'value'
+          },
+          series: [{
+            type: 'bar',
+            data: this.analysisData[c].y
+          }]
+        };
+        // 使用刚指定的配置项和数据显示图表
+        this.chart.setOption(option);
+        });
+      }else{
+        this.$message.error('暂无数据')
+        this.showChart = false;
+      }
+
+      console.log(c)
+    },
+    closeChart(){
+      this.showChart = false;
     },
     locate() {
       // 定位逻辑
@@ -281,31 +483,11 @@ export default {
       }
       
     },
+
+
     renderGeojson(){
       this.dialogVisible.B = false;
       this.$emit('renderGeojson', this.spaceOption2 + this.spaceOption1)
-    },
-    exportToExcel() {
-      if(this.searchResult === '') {
-        this.$message({
-          message: '请先查询数据',
-          type: 'warning'
-        });
-        return;
-      }
-      // 制作中文字段
-      let data = {
-        '热水用量': this.searchResult.hot_consum,
-        '冷水用量': this.searchResult.cool_consum,
-        '水压': this.searchResult.water_pressure,
-        '水流速度': this.searchResult.water_speed
-      }
-      var wb = XLSX.utils.book_new();
-      var ws = XLSX.utils.json_to_sheet([data]);
-      XLSX.utils.book_append_sheet(wb, ws, "sheet1");
-      XLSX.writeFile(wb, this.selectedOption1 + '区' + this.selectedOption2 + '栋' + this.selectedOption3 + '宿舍用水数据'+'.xlsx');
-      // 关闭对话框
-      this.dialogVisible.C = false;
     },
     showDetail(index) {
       // 点击预警信息，展示详情

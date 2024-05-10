@@ -1,8 +1,8 @@
 <template>
     <div>
       <upCard @locate='locate'  @renderGeojson='renderGeojson':key="index" />
-      <midCard @locate='locate'  :key="index" />
-      <downCard @locate='locate' :key="index"/>
+      <midCard @locate='locate'  @renderGeojson='renderGeojson' :key="index" />
+      <downCard @locate='locate' @renderGeojson='renderGeojson' :key="index"/>
     </div>
   </template>
   
