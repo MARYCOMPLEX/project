@@ -2,84 +2,2605 @@
 const geojson = {
     "type": "FeatureCollection",
     "name": "ssPoint1",
-    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    },
     "features": [
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "1区1栋", "FID_1": 0.0, "4_7LS": 50.0, "41_47LS": 500.0, "ZDYLS": 1500.0, "4_7RS": 10.0, "41_47RS": 70.0, "ZDYRS": 300.0, "4_7YD": 100.0, "ZDYYD": 700.0, "DGL22": 800.0, "ZDYDGL": 804.0, "4_7YZSS": 261.0, "ZDYYZSS": 265.0, "4_7WZSS": 30.0, "ZDYWZSS": 30.0, "4_7WG": 10.0, "ZDYWG": 10.0, "4_7WG1": 1.0, "ZDYWG1": 1.0, "4_7YKWC": 1.0, "ZDYYKWC": 1.0 }, "geometry": { "type": "Point", "coordinates": [ 112.919751339411562, 27.897472774540208 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "1区2栋", "FID_1": 1.0, "4_7LS": 51.0, "41_47LS": 501.0, "ZDYLS": 1501.0, "4_7RS": 11.0, "41_47RS": 71.0, "ZDYRS": 301.0, "4_7YD": 101.0, "ZDYYD": 701.0, "DGL22": 801.0, "ZDYDGL": 805.0, "4_7YZSS": 262.0, "ZDYYZSS": 266.0, "4_7WZSS": 31.0, "ZDYWZSS": 31.0, "4_7WG": 11.0, "ZDYWG": 11.0, "4_7WG1": 2.0, "ZDYWG1": 2.0, "4_7YKWC": 2.0, "ZDYYKWC": 2.0 }, "geometry": { "type": "Point", "coordinates": [ 112.919603812829195, 27.897813037464044 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "1区3栋", "FID_1": 2.0, "4_7LS": 52.0, "41_47LS": 502.0, "ZDYLS": 1502.0, "4_7RS": 12.0, "41_47RS": 72.0, "ZDYRS": 302.0, "4_7YD": 102.0, "ZDYYD": 702.0, "DGL22": 802.0, "ZDYDGL": 806.0, "4_7YZSS": 263.0, "ZDYYZSS": 267.0, "4_7WZSS": 32.0, "ZDYWZSS": 32.0, "4_7WG": 12.0, "ZDYWG": 12.0, "4_7WG1": 3.0, "ZDYWG1": 3.0, "4_7YKWC": 3.0, "ZDYYKWC": 3.0 }, "geometry": { "type": "Point", "coordinates": [ 112.919325415891521, 27.897620301122569 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "1区4栋", "FID_1": 3.0, "4_7LS": 53.0, "41_47LS": 503.0, "ZDYLS": 1503.0, "4_7RS": 13.0, "41_47RS": 73.0, "ZDYRS": 303.0, "4_7YD": 103.0, "ZDYYD": 703.0, "DGL22": 803.0, "ZDYDGL": 807.0, "4_7YZSS": 264.0, "ZDYYZSS": 268.0, "4_7WZSS": 33.0, "ZDYWZSS": 33.0, "4_7WG": 13.0, "ZDYWG": 13.0, "4_7WG1": 4.0, "ZDYWG1": 4.0, "4_7YKWC": 4.0, "ZDYYKWC": 4.0 }, "geometry": { "type": "Point", "coordinates": [ 112.918954219974609, 27.897727376867831 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "1区5栋", "FID_1": 4.0, "4_7LS": 54.0, "41_47LS": 504.0, "ZDYLS": 1504.0, "4_7RS": 14.0, "41_47RS": 74.0, "ZDYRS": 304.0, "4_7YD": 104.0, "ZDYYD": 704.0, "DGL22": 804.0, "ZDYDGL": 808.0, "4_7YZSS": 265.0, "ZDYYZSS": 269.0, "4_7WZSS": 34.0, "ZDYWZSS": 34.0, "4_7WG": 14.0, "ZDYWG": 14.0, "4_7WG1": 5.0, "ZDYWG1": 5.0, "4_7YKWC": 5.0, "ZDYYKWC": 5.0 }, "geometry": { "type": "Point", "coordinates": [ 112.918963737818629, 27.898003394344506 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "1区6栋", "FID_1": 5.0, "4_7LS": 55.0, "41_47LS": 505.0, "ZDYLS": 1505.0, "4_7RS": 15.0, "41_47RS": 75.0, "ZDYRS": 305.0, "4_7YD": 105.0, "ZDYYD": 705.0, "DGL22": 805.0, "ZDYDGL": 809.0, "4_7YZSS": 266.0, "ZDYYZSS": 270.0, "4_7WZSS": 35.0, "ZDYWZSS": 35.0, "4_7WG": 15.0, "ZDYWG": 15.0, "4_7WG1": 1.0, "ZDYWG1": 1.0, "4_7YKWC": 6.0, "ZDYYKWC": 6.0 }, "geometry": { "type": "Point", "coordinates": [ 112.919558603070087, 27.89802480949356 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "1区7栋", "FID_1": 6.0, "4_7LS": 56.0, "41_47LS": 506.0, "ZDYLS": 1506.0, "4_7RS": 30.0, "41_47RS": 105.0, "ZDYRS": 400.0, "4_7YD": 106.0, "ZDYYD": 706.0, "DGL22": 806.0, "ZDYDGL": 810.0, "4_7YZSS": 267.0, "ZDYYZSS": 271.0, "4_7WZSS": 36.0, "ZDYWZSS": 36.0, "4_7WG": 16.0, "ZDYWG": 16.0, "4_7WG1": 2.0, "ZDYWG1": 2.0, "4_7YKWC": 1.0, "ZDYYKWC": 1.0 }, "geometry": { "type": "Point", "coordinates": [ 112.919496737083932, 27.898288929665206 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "1区8栋", "FID_1": 7.0, "4_7LS": 57.0, "41_47LS": 507.0, "ZDYLS": 1507.0, "4_7RS": 17.0, "41_47RS": 77.0, "ZDYRS": 307.0, "4_7YD": 107.0, "ZDYYD": 707.0, "DGL22": 807.0, "ZDYDGL": 811.0, "4_7YZSS": 268.0, "ZDYYZSS": 272.0, "4_7WZSS": 50.0, "ZDYWZSS": 37.0, "4_7WG": 17.0, "ZDYWG": 17.0, "4_7WG1": 3.0, "ZDYWG1": 3.0, "4_7YKWC": 2.0, "ZDYYKWC": 2.0 }, "geometry": { "type": "Point", "coordinates": [ 112.919047018953833, 27.898238960984084 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "1区9栋", "FID_1": 8.0, "4_7LS": 58.0, "41_47LS": 508.0, "ZDYLS": 1508.0, "4_7RS": 18.0, "41_47RS": 78.0, "ZDYRS": 308.0, "4_7YD": 108.0, "ZDYYD": 708.0, "DGL22": 808.0, "ZDYDGL": 1523.0, "4_7YZSS": 269.0, "ZDYYZSS": 273.0, "4_7WZSS": 38.0, "ZDYWZSS": 38.0, "4_7WG": 18.0, "ZDYWG": 18.0, "4_7WG1": 4.0, "ZDYWG1": 4.0, "4_7YKWC": 3.0, "ZDYYKWC": 3.0 }, "geometry": { "type": "Point", "coordinates": [ 112.918725791718074, 27.898705335341226 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "1区10栋", "FID_1": 9.0, "4_7LS": 59.0, "41_47LS": 509.0, "ZDYLS": 1509.0, "4_7RS": 19.0, "41_47RS": 79.0, "ZDYRS": 309.0, "4_7YD": 109.0, "ZDYYD": 709.0, "DGL22": 809.0, "ZDYDGL": 813.0, "4_7YZSS": 270.0, "ZDYYZSS": 274.0, "4_7WZSS": 39.0, "ZDYWZSS": 39.0, "4_7WG": 19.0, "ZDYWG": 19.0, "4_7WG1": 5.0, "ZDYWG1": 5.0, "4_7YKWC": 15.0, "ZDYYKWC": 14.0 }, "geometry": { "type": "Point", "coordinates": [ 112.918723412257066, 27.898964696590863 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "2区5栋", "FID_1": 10.0, "4_7LS": 60.0, "41_47LS": 510.0, "ZDYLS": 1510.0, "4_7RS": 20.0, "41_47RS": 80.0, "ZDYRS": 310.0, "4_7YD": 180.0, "ZDYYD": 860.0, "DGL22": 810.0, "ZDYDGL": 814.0, "4_7YZSS": 271.0, "ZDYYZSS": 275.0, "4_7WZSS": 40.0, "ZDYWZSS": 40.0, "4_7WG": 20.0, "ZDYWG": 20.0, "4_7WG1": 1.0, "ZDYWG1": 1.0, "4_7YKWC": 5.0, "ZDYYKWC": 5.0 }, "geometry": { "type": "Point", "coordinates": [ 112.919024493389827, 27.900634760955473 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "2区6栋", "FID_1": 11.0, "4_7LS": 61.0, "41_47LS": 511.0, "ZDYLS": 1511.0, "4_7RS": 10.0, "41_47RS": 70.0, "ZDYRS": 311.0, "4_7YD": 111.0, "ZDYYD": 711.0, "DGL22": 811.0, "ZDYDGL": 815.0, "4_7YZSS": 272.0, "ZDYYZSS": 276.0, "4_7WZSS": 30.0, "ZDYWZSS": 30.0, "4_7WG": 10.0, "ZDYWG": 10.0, "4_7WG1": 2.0, "ZDYWG1": 2.0, "4_7YKWC": 6.0, "ZDYYKWC": 6.0 }, "geometry": { "type": "Point", "coordinates": [ 112.919021638036625, 27.900903164156933 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "2区7栋", "FID_1": 12.0, "4_7LS": 100.0, "41_47LS": 750.0, "ZDYLS": 1512.0, "4_7RS": 11.0, "41_47RS": 71.0, "ZDYRS": 312.0, "4_7YD": 112.0, "ZDYYD": 712.0, "DGL22": 1268.0, "ZDYDGL": 816.0, "4_7YZSS": 273.0, "ZDYYZSS": 277.0, "4_7WZSS": 31.0, "ZDYWZSS": 31.0, "4_7WG": 11.0, "ZDYWG": 11.0, "4_7WG1": 3.0, "ZDYWG1": 3.0, "4_7YKWC": 1.0, "ZDYYKWC": 1.0 }, "geometry": { "type": "Point", "coordinates": [ 112.919001650564169, 27.901148724532735 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "2区8栋", "FID_1": 13.0, "4_7LS": 63.0, "41_47LS": 513.0, "ZDYLS": 1513.0, "4_7RS": 12.0, "41_47RS": 72.0, "ZDYRS": 313.0, "4_7YD": 113.0, "ZDYYD": 713.0, "DGL22": 813.0, "ZDYDGL": 817.0, "4_7YZSS": 274.0, "ZDYYZSS": 278.0, "4_7WZSS": 32.0, "ZDYWZSS": 32.0, "4_7WG": 12.0, "ZDYWG": 12.0, "4_7WG1": 4.0, "ZDYWG1": 4.0, "4_7YKWC": 2.0, "ZDYYKWC": 2.0 }, "geometry": { "type": "Point", "coordinates": [ 112.919241500233568, 27.901360020670054 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "2区9栋", "FID_1": 14.0, "4_7LS": 64.0, "41_47LS": 514.0, "ZDYLS": 1514.0, "4_7RS": 13.0, "41_47RS": 73.0, "ZDYRS": 314.0, "4_7YD": 114.0, "ZDYYD": 714.0, "DGL22": 814.0, "ZDYDGL": 818.0, "4_7YZSS": 275.0, "ZDYYZSS": 279.0, "4_7WZSS": 33.0, "ZDYWZSS": 55.0, "4_7WG": 33.0, "ZDYWG": 36.0, "4_7WG1": 5.0, "ZDYWG1": 5.0, "4_7YKWC": 3.0, "ZDYYKWC": 3.0 }, "geometry": { "type": "Point", "coordinates": [ 112.919241500233568, 27.901605581045857 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "2区10栋", "FID_1": 15.0, "4_7LS": 65.0, "41_47LS": 515.0, "ZDYLS": 1515.0, "4_7RS": 14.0, "41_47RS": 74.0, "ZDYRS": 315.0, "4_7YD": 115.0, "ZDYYD": 715.0, "DGL22": 815.0, "ZDYDGL": 819.0, "4_7YZSS": 276.0, "ZDYYZSS": 280.0, "4_7WZSS": 34.0, "ZDYWZSS": 34.0, "4_7WG": 14.0, "ZDYWG": 14.0, "4_7WG1": 1.0, "ZDYWG1": 1.0, "4_7YKWC": 4.0, "ZDYYKWC": 4.0 }, "geometry": { "type": "Point", "coordinates": [ 112.919141562871317, 27.901911103839005 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "2区11栋", "FID_1": 16.0, "4_7LS": 66.0, "41_47LS": 516.0, "ZDYLS": 1516.0, "4_7RS": 15.0, "41_47RS": 75.0, "ZDYRS": 316.0, "4_7YD": 116.0, "ZDYYD": 716.0, "DGL22": 816.0, "ZDYDGL": 820.0, "4_7YZSS": 277.0, "ZDYYZSS": 265.0, "4_7WZSS": 35.0, "ZDYWZSS": 35.0, "4_7WG": 15.0, "ZDYWG": 15.0, "4_7WG1": 2.0, "ZDYWG1": 2.0, "4_7YKWC": 5.0, "ZDYYKWC": 5.0 }, "geometry": { "type": "Point", "coordinates": [ 112.919141562871317, 27.902059582205769 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "3区1栋", "FID_1": 17.0, "4_7LS": 67.0, "41_47LS": 517.0, "ZDYLS": 1517.0, "4_7RS": 16.0, "41_47RS": 76.0, "ZDYRS": 317.0, "4_7YD": 117.0, "ZDYYD": 717.0, "DGL22": 817.0, "ZDYDGL": 821.0, "4_7YZSS": 278.0, "ZDYYZSS": 266.0, "4_7WZSS": 36.0, "ZDYWZSS": 36.0, "4_7WG": 16.0, "ZDYWG": 16.0, "4_7WG1": 3.0, "ZDYWG1": 3.0, "4_7YKWC": 6.0, "ZDYYKWC": 6.0 }, "geometry": { "type": "Point", "coordinates": [ 112.919086359375981, 27.903411116057086 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "3区2栋", "FID_1": 18.0, "4_7LS": 68.0, "41_47LS": 518.0, "ZDYLS": 1518.0, "4_7RS": 17.0, "41_47RS": 77.0, "ZDYRS": 318.0, "4_7YD": 118.0, "ZDYYD": 718.0, "DGL22": 818.0, "ZDYDGL": 822.0, "4_7YZSS": 279.0, "ZDYYZSS": 267.0, "4_7WZSS": 37.0, "ZDYWZSS": 37.0, "4_7WG": 17.0, "ZDYWG": 17.0, "4_7WG1": 4.0, "ZDYWG1": 4.0, "4_7YKWC": 1.0, "ZDYYKWC": 1.0 }, "geometry": { "type": "Point", "coordinates": [ 112.919467073136914, 27.903405405350671 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "3区3栋", "FID_1": 19.0, "4_7LS": 69.0, "41_47LS": 519.0, "ZDYLS": 1519.0, "4_7RS": 18.0, "41_47RS": 78.0, "ZDYRS": 319.0, "4_7YD": 119.0, "ZDYYD": 719.0, "DGL22": 819.0, "ZDYDGL": 823.0, "4_7YZSS": 280.0, "ZDYYZSS": 268.0, "4_7WZSS": 38.0, "ZDYWZSS": 38.0, "4_7WG": 18.0, "ZDYWG": 18.0, "4_7WG1": 5.0, "ZDYWG1": 5.0, "4_7YKWC": 2.0, "ZDYYKWC": 2.0 }, "geometry": { "type": "Point", "coordinates": [ 112.919063516550324, 27.903631930038426 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "3区4栋", "FID_1": 20.0, "4_7LS": 50.0, "41_47LS": 500.0, "ZDYLS": 1500.0, "4_7RS": 19.0, "41_47RS": 79.0, "ZDYRS": 320.0, "4_7YD": 120.0, "ZDYYD": 700.0, "DGL22": 820.0, "ZDYDGL": 824.0, "4_7YZSS": 261.0, "ZDYYZSS": 269.0, "4_7WZSS": 39.0, "ZDYWZSS": 39.0, "4_7WG": 19.0, "ZDYWG": 19.0, "4_7WG1": 10.0, "ZDYWG1": 11.0, "4_7YKWC": 3.0, "ZDYYKWC": 3.0 }, "geometry": { "type": "Point", "coordinates": [ 112.919444230311257, 27.903630026469621 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "3区5栋", "FID_1": 21.0, "4_7LS": 51.0, "41_47LS": 501.0, "ZDYLS": 1501.0, "4_7RS": 35.0, "41_47RS": 110.0, "ZDYRS": 436.0, "4_7YD": 100.0, "ZDYYD": 701.0, "DGL22": 821.0, "ZDYDGL": 825.0, "4_7YZSS": 262.0, "ZDYYZSS": 270.0, "4_7WZSS": 40.0, "ZDYWZSS": 40.0, "4_7WG": 20.0, "ZDYWG": 20.0, "4_7WG1": 2.0, "ZDYWG1": 2.0, "4_7YKWC": 4.0, "ZDYYKWC": 4.0 }, "geometry": { "type": "Point", "coordinates": [ 112.919065420119139, 27.903873683276618 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "3区6栋", "FID_1": 22.0, "4_7LS": 52.0, "41_47LS": 502.0, "ZDYLS": 1502.0, "4_7RS": 10.0, "41_47RS": 70.0, "ZDYRS": 301.0, "4_7YD": 101.0, "ZDYYD": 702.0, "DGL22": 822.0, "ZDYDGL": 826.0, "4_7YZSS": 263.0, "ZDYYZSS": 271.0, "4_7WZSS": 30.0, "ZDYWZSS": 30.0, "4_7WG": 10.0, "ZDYWG": 10.0, "4_7WG1": 3.0, "ZDYWG1": 3.0, "4_7YKWC": 5.0, "ZDYYKWC": 5.0 }, "geometry": { "type": "Point", "coordinates": [ 112.919484205256154, 27.903867972570204 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "4区1栋", "FID_1": 23.0, "4_7LS": 53.0, "41_47LS": 503.0, "ZDYLS": 1503.0, "4_7RS": 11.0, "41_47RS": 71.0, "ZDYRS": 302.0, "4_7YD": 102.0, "ZDYYD": 703.0, "DGL22": 1415.0, "ZDYDGL": 827.0, "4_7YZSS": 264.0, "ZDYYZSS": 272.0, "4_7WZSS": 60.0, "ZDYWZSS": 62.0, "4_7WG": 28.0, "ZDYWG": 34.0, "4_7WG1": 12.0, "ZDYWG1": 12.0, "4_7YKWC": 6.0, "ZDYYKWC": 6.0 }, "geometry": { "type": "Point", "coordinates": [ 112.919068592733808, 27.905998954394711 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "4区2栋", "FID_1": 24.0, "4_7LS": 54.0, "41_47LS": 504.0, "ZDYLS": 1504.0, "4_7RS": 12.0, "41_47RS": 72.0, "ZDYRS": 303.0, "4_7YD": 103.0, "ZDYYD": 704.0, "DGL22": 824.0, "ZDYDGL": 828.0, "4_7YZSS": 265.0, "ZDYYZSS": 273.0, "4_7WZSS": 32.0, "ZDYWZSS": 32.0, "4_7WG": 12.0, "ZDYWG": 12.0, "4_7WG1": 5.0, "ZDYWG1": 5.0, "4_7YKWC": 1.0, "ZDYYKWC": 1.0 }, "geometry": { "type": "Point", "coordinates": [ 112.918973414293575, 27.906295911128236 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "4区3栋", "FID_1": 25.0, "4_7LS": 55.0, "41_47LS": 505.0, "ZDYLS": 1505.0, "4_7RS": 13.0, "41_47RS": 73.0, "ZDYRS": 304.0, "4_7YD": 104.0, "ZDYYD": 705.0, "DGL22": 825.0, "ZDYDGL": 829.0, "4_7YZSS": 266.0, "ZDYYZSS": 274.0, "4_7WZSS": 33.0, "ZDYWZSS": 33.0, "4_7WG": 13.0, "ZDYWG": 13.0, "4_7WG1": 1.0, "ZDYWG1": 1.0, "4_7YKWC": 2.0, "ZDYYKWC": 2.0 }, "geometry": { "type": "Point", "coordinates": [ 112.919133314073164, 27.906619517825028 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "4区4栋", "FID_1": 26.0, "4_7LS": 56.0, "41_47LS": 506.0, "ZDYLS": 1506.0, "4_7RS": 14.0, "41_47RS": 74.0, "ZDYRS": 305.0, "4_7YD": 105.0, "ZDYYD": 706.0, "DGL22": 826.0, "ZDYDGL": 830.0, "4_7YZSS": 267.0, "ZDYYZSS": 275.0, "4_7WZSS": 34.0, "ZDYWZSS": 34.0, "4_7WG": 14.0, "ZDYWG": 14.0, "4_7WG1": 2.0, "ZDYWG1": 2.0, "4_7YKWC": 3.0, "ZDYYKWC": 3.0 }, "geometry": { "type": "Point", "coordinates": [ 112.919148542623603, 27.906908860283334 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "4区5栋", "FID_1": 27.0, "4_7LS": 105.0, "41_47LS": 765.0, "ZDYLS": 1507.0, "4_7RS": 15.0, "41_47RS": 75.0, "ZDYRS": 306.0, "4_7YD": 106.0, "ZDYYD": 707.0, "DGL22": 827.0, "ZDYDGL": 831.0, "4_7YZSS": 268.0, "ZDYYZSS": 276.0, "4_7WZSS": 35.0, "ZDYWZSS": 35.0, "4_7WG": 15.0, "ZDYWG": 15.0, "4_7WG1": 3.0, "ZDYWG1": 3.0, "4_7YKWC": 4.0, "ZDYYKWC": 4.0 }, "geometry": { "type": "Point", "coordinates": [ 112.919239913926219, 27.907117301067448 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "4区6栋", "FID_1": 28.0, "4_7LS": 58.0, "41_47LS": 508.0, "ZDYLS": 1508.0, "4_7RS": 16.0, "41_47RS": 76.0, "ZDYRS": 307.0, "4_7YD": 107.0, "ZDYYD": 708.0, "DGL22": 828.0, "ZDYDGL": 832.0, "4_7YZSS": 269.0, "ZDYYZSS": 277.0, "4_7WZSS": 36.0, "ZDYWZSS": 36.0, "4_7WG": 16.0, "ZDYWG": 16.0, "4_7WG1": 4.0, "ZDYWG1": 4.0, "4_7YKWC": 5.0, "ZDYYKWC": 5.0 }, "geometry": { "type": "Point", "coordinates": [ 112.919768154269519, 27.907117301067448 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "4区7栋", "FID_1": 29.0, "4_7LS": 59.0, "41_47LS": 509.0, "ZDYLS": 1509.0, "4_7RS": 17.0, "41_47RS": 77.0, "ZDYRS": 308.0, "4_7YD": 108.0, "ZDYYD": 709.0, "DGL22": 829.0, "ZDYDGL": 833.0, "4_7YZSS": 270.0, "ZDYYZSS": 278.0, "4_7WZSS": 37.0, "ZDYWZSS": 37.0, "4_7WG": 17.0, "ZDYWG": 17.0, "4_7WG1": 5.0, "ZDYWG1": 5.0, "4_7YKWC": 6.0, "ZDYYKWC": 6.0 }, "geometry": { "type": "Point", "coordinates": [ 112.91963490445319, 27.907374282856079 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "4区8栋", "FID_1": 30.0, "4_7LS": 60.0, "41_47LS": 510.0, "ZDYLS": 1510.0, "4_7RS": 18.0, "41_47RS": 78.0, "ZDYRS": 309.0, "4_7YD": 109.0, "ZDYYD": 710.0, "DGL22": 830.0, "ZDYDGL": 834.0, "4_7YZSS": 271.0, "ZDYYZSS": 279.0, "4_7WZSS": 38.0, "ZDYWZSS": 38.0, "4_7WG": 18.0, "ZDYWG": 18.0, "4_7WG1": 1.0, "ZDYWG1": 1.0, "4_7YKWC": 17.0, "ZDYYKWC": 12.0 }, "geometry": { "type": "Point", "coordinates": [ 112.920122693959385, 27.907364765012055 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "5区1栋", "FID_1": 31.0, "4_7LS": 61.0, "41_47LS": 511.0, "ZDYLS": 1511.0, "4_7RS": 19.0, "41_47RS": 79.0, "ZDYRS": 310.0, "4_7YD": 190.0, "ZDYYD": 900.0, "DGL22": 800.0, "ZDYDGL": 835.0, "4_7YZSS": 272.0, "ZDYYZSS": 280.0, "4_7WZSS": 39.0, "ZDYWZSS": 39.0, "4_7WG": 19.0, "ZDYWG": 19.0, "4_7WG1": 2.0, "ZDYWG1": 2.0, "4_7YKWC": 2.0, "ZDYYKWC": 2.0 }, "geometry": { "type": "Point", "coordinates": [ 112.904702596911164, 27.909785033774224 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "5区2栋", "FID_1": 32.0, "4_7LS": 62.0, "41_47LS": 512.0, "ZDYLS": 1512.0, "4_7RS": 20.0, "41_47RS": 80.0, "ZDYRS": 311.0, "4_7YD": 111.0, "ZDYYD": 712.0, "DGL22": 801.0, "ZDYDGL": 836.0, "4_7YZSS": 273.0, "ZDYYZSS": 265.0, "4_7WZSS": 40.0, "ZDYWZSS": 40.0, "4_7WG": 20.0, "ZDYWG": 20.0, "4_7WG1": 3.0, "ZDYWG1": 3.0, "4_7YKWC": 3.0, "ZDYYKWC": 3.0 }, "geometry": { "type": "Point", "coordinates": [ 112.904191012794911, 27.909811207845291 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "5区3栋", "FID_1": 33.0, "4_7LS": 63.0, "41_47LS": 513.0, "ZDYLS": 1513.0, "4_7RS": 10.0, "41_47RS": 70.0, "ZDYRS": 312.0, "4_7YD": 112.0, "ZDYYD": 713.0, "DGL22": 802.0, "ZDYDGL": 837.0, "4_7YZSS": 274.0, "ZDYYZSS": 266.0, "4_7WZSS": 30.0, "ZDYWZSS": 30.0, "4_7WG": 10.0, "ZDYWG": 10.0, "4_7WG1": 4.0, "ZDYWG1": 4.0, "4_7YKWC": 4.0, "ZDYYKWC": 4.0 }, "geometry": { "type": "Point", "coordinates": [ 112.904724012060228, 27.910118158315047 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "5区4栋", "FID_1": 34.0, "4_7LS": 64.0, "41_47LS": 514.0, "ZDYLS": 1514.0, "4_7RS": 11.0, "41_47RS": 71.0, "ZDYRS": 313.0, "4_7YD": 113.0, "ZDYYD": 714.0, "DGL22": 803.0, "ZDYDGL": 838.0, "4_7YZSS": 275.0, "ZDYYZSS": 267.0, "4_7WZSS": 31.0, "ZDYWZSS": 31.0, "4_7WG": 11.0, "ZDYWG": 11.0, "4_7WG1": 5.0, "ZDYWG1": 5.0, "4_7YKWC": 5.0, "ZDYYKWC": 5.0 }, "geometry": { "type": "Point", "coordinates": [ 112.904124387886739, 27.910151470769133 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "5区5栋", "FID_1": 35.0, "4_7LS": 65.0, "41_47LS": 515.0, "ZDYLS": 1515.0, "4_7RS": 12.0, "41_47RS": 72.0, "ZDYRS": 314.0, "4_7YD": 114.0, "ZDYYD": 715.0, "DGL22": 804.0, "ZDYDGL": 839.0, "4_7YZSS": 276.0, "ZDYYZSS": 268.0, "4_7WZSS": 32.0, "ZDYWZSS": 32.0, "4_7WG": 12.0, "ZDYWG": 12.0, "4_7WG1": 1.0, "ZDYWG1": 1.0, "4_7YKWC": 6.0, "ZDYYKWC": 6.0 }, "geometry": { "type": "Point", "coordinates": [ 112.904771125388194, 27.910554075571333 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "5区6栋", "FID_1": 36.0, "4_7LS": 66.0, "41_47LS": 516.0, "ZDYLS": 1516.0, "4_7RS": 13.0, "41_47RS": 73.0, "ZDYRS": 315.0, "4_7YD": 115.0, "ZDYYD": 716.0, "DGL22": 805.0, "ZDYDGL": 840.0, "4_7YZSS": 277.0, "ZDYYZSS": 269.0, "4_7WZSS": 33.0, "ZDYWZSS": 33.0, "4_7WG": 13.0, "ZDYWG": 13.0, "4_7WG1": 2.0, "ZDYWG1": 2.0, "4_7YKWC": 1.0, "ZDYYKWC": 1.0 }, "geometry": { "type": "Point", "coordinates": [ 112.90433330456311, 27.910561689846553 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "5区7栋", "FID_1": 37.0, "4_7LS": 67.0, "41_47LS": 517.0, "ZDYLS": 1517.0, "4_7RS": 14.0, "41_47RS": 74.0, "ZDYRS": 316.0, "4_7YD": 116.0, "ZDYYD": 717.0, "DGL22": 806.0, "ZDYDGL": 841.0, "4_7YZSS": 278.0, "ZDYYZSS": 270.0, "4_7WZSS": 34.0, "ZDYWZSS": 34.0, "4_7WG": 14.0, "ZDYWG": 14.0, "4_7WG1": 3.0, "ZDYWG1": 3.0, "4_7YKWC": 2.0, "ZDYYKWC": 2.0 }, "geometry": { "type": "Point", "coordinates": [ 112.904805389626674, 27.910988089258804 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "5区8栋", "FID_1": 38.0, "4_7LS": 68.0, "41_47LS": 518.0, "ZDYLS": 1518.0, "4_7RS": 15.0, "41_47RS": 75.0, "ZDYRS": 317.0, "4_7YD": 117.0, "ZDYYD": 718.0, "DGL22": 807.0, "ZDYDGL": 842.0, "4_7YZSS": 279.0, "ZDYYZSS": 271.0, "4_7WZSS": 35.0, "ZDYWZSS": 35.0, "4_7WG": 15.0, "ZDYWG": 15.0, "4_7WG1": 4.0, "ZDYWG1": 4.0, "4_7YKWC": 3.0, "ZDYYKWC": 3.0 }, "geometry": { "type": "Point", "coordinates": [ 112.904337111700713, 27.911087074836647 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "6区1栋", "FID_1": 39.0, "4_7LS": 69.0, "41_47LS": 519.0, "ZDYLS": 1519.0, "4_7RS": 16.0, "41_47RS": 76.0, "ZDYRS": 318.0, "4_7YD": 118.0, "ZDYYD": 719.0, "DGL22": 808.0, "ZDYDGL": 1655.0, "4_7YZSS": 280.0, "ZDYYZSS": 272.0, "4_7WZSS": 36.0, "ZDYWZSS": 36.0, "4_7WG": 16.0, "ZDYWG": 16.0, "4_7WG1": 5.0, "ZDYWG1": 5.0, "4_7YKWC": 4.0, "ZDYYKWC": 4.0 }, "geometry": { "type": "Point", "coordinates": [ 112.906028551556744, 27.911575221261991 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "6区2栋", "FID_1": 40.0, "4_7LS": 108.0, "41_47LS": 805.0, "ZDYLS": 1500.0, "4_7RS": 17.0, "41_47RS": 77.0, "ZDYRS": 319.0, "4_7YD": 119.0, "ZDYYD": 700.0, "DGL22": 809.0, "ZDYDGL": 844.0, "4_7YZSS": 261.0, "ZDYYZSS": 273.0, "4_7WZSS": 37.0, "ZDYWZSS": 37.0, "4_7WG": 17.0, "ZDYWG": 17.0, "4_7WG1": 1.0, "ZDYWG1": 1.0, "4_7YKWC": 5.0, "ZDYYKWC": 5.0 }, "geometry": { "type": "Point", "coordinates": [ 112.906304569033438, 27.911813167362581 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "6区3栋", "FID_1": 41.0, "4_7LS": 51.0, "41_47LS": 501.0, "ZDYLS": 1501.0, "4_7RS": 18.0, "41_47RS": 78.0, "ZDYRS": 320.0, "4_7YD": 120.0, "ZDYYD": 701.0, "DGL22": 810.0, "ZDYDGL": 804.0, "4_7YZSS": 262.0, "ZDYYZSS": 274.0, "4_7WZSS": 38.0, "ZDYWZSS": 38.0, "4_7WG": 18.0, "ZDYWG": 18.0, "4_7WG1": 2.0, "ZDYWG1": 2.0, "4_7YKWC": 6.0, "ZDYYKWC": 6.0 }, "geometry": { "type": "Point", "coordinates": [ 112.905714462703969, 27.911836961972639 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "6区4栋", "FID_1": 42.0, "4_7LS": 52.0, "41_47LS": 502.0, "ZDYLS": 1502.0, "4_7RS": 19.0, "41_47RS": 79.0, "ZDYRS": 300.0, "4_7YD": 100.0, "ZDYYD": 702.0, "DGL22": 811.0, "ZDYDGL": 805.0, "4_7YZSS": 263.0, "ZDYYZSS": 275.0, "4_7WZSS": 39.0, "ZDYWZSS": 39.0, "4_7WG": 19.0, "ZDYWG": 19.0, "4_7WG1": 3.0, "ZDYWG1": 3.0, "4_7YKWC": 1.0, "ZDYYKWC": 1.0 }, "geometry": { "type": "Point", "coordinates": [ 112.906179885276714, 27.912167231160264 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "6区5栋", "FID_1": 43.0, "4_7LS": 53.0, "41_47LS": 503.0, "ZDYLS": 1503.0, "4_7RS": 20.0, "41_47RS": 80.0, "ZDYRS": 301.0, "4_7YD": 101.0, "ZDYYD": 703.0, "DGL22": 812.0, "ZDYDGL": 806.0, "4_7YZSS": 264.0, "ZDYYZSS": 276.0, "4_7WZSS": 40.0, "ZDYWZSS": 40.0, "4_7WG": 20.0, "ZDYWG": 20.0, "4_7WG1": 4.0, "ZDYWG1": 4.0, "4_7YKWC": 2.0, "ZDYYKWC": 2.0 }, "geometry": { "type": "Point", "coordinates": [ 112.906655777477908, 27.912414695104882 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "6区6栋", "FID_1": 44.0, "4_7LS": 54.0, "41_47LS": 504.0, "ZDYLS": 1504.0, "4_7RS": 10.0, "41_47RS": 70.0, "ZDYRS": 302.0, "4_7YD": 102.0, "ZDYYD": 704.0, "DGL22": 813.0, "ZDYDGL": 807.0, "4_7YZSS": 265.0, "ZDYYZSS": 277.0, "4_7WZSS": 30.0, "ZDYWZSS": 30.0, "4_7WG": 10.0, "ZDYWG": 10.0, "4_7WG1": 5.0, "ZDYWG1": 5.0, "4_7YKWC": 3.0, "ZDYYKWC": 3.0 }, "geometry": { "type": "Point", "coordinates": [ 112.90633930916411, 27.912714031299426 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "6区7栋", "FID_1": 45.0, "4_7LS": 55.0, "41_47LS": 505.0, "ZDYLS": 1505.0, "4_7RS": 11.0, "41_47RS": 71.0, "ZDYRS": 303.0, "4_7YD": 103.0, "ZDYYD": 705.0, "DGL22": 814.0, "ZDYDGL": 808.0, "4_7YZSS": 266.0, "ZDYYZSS": 278.0, "4_7WZSS": 31.0, "ZDYWZSS": 31.0, "4_7WG": 11.0, "ZDYWG": 11.0, "4_7WG1": 1.0, "ZDYWG1": 1.0, "4_7YKWC": 4.0, "ZDYYKWC": 4.0 }, "geometry": { "type": "Point", "coordinates": [ 112.906075188992446, 27.91254984849002 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "7区1栋", "FID_1": 46.0, "4_7LS": 56.0, "41_47LS": 506.0, "ZDYLS": 1506.0, "4_7RS": 38.0, "41_47RS": 109.0, "ZDYRS": 415.0, "4_7YD": 104.0, "ZDYYD": 706.0, "DGL22": 815.0, "ZDYDGL": 809.0, "4_7YZSS": 267.0, "ZDYYZSS": 279.0, "4_7WZSS": 32.0, "ZDYWZSS": 32.0, "4_7WG": 12.0, "ZDYWG": 12.0, "4_7WG1": 2.0, "ZDYWG1": 2.0, "4_7YKWC": 5.0, "ZDYYKWC": 5.0 }, "geometry": { "type": "Point", "coordinates": [ 112.906045207783791, 27.914534699682704 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "7区2栋", "FID_1": 47.0, "4_7LS": 57.0, "41_47LS": 507.0, "ZDYLS": 1507.0, "4_7RS": 13.0, "41_47RS": 73.0, "ZDYRS": 305.0, "4_7YD": 105.0, "ZDYYD": 707.0, "DGL22": 816.0, "ZDYDGL": 810.0, "4_7YZSS": 268.0, "ZDYYZSS": 280.0, "4_7WZSS": 33.0, "ZDYWZSS": 33.0, "4_7WG": 13.0, "ZDYWG": 13.0, "4_7WG1": 3.0, "ZDYWG1": 3.0, "4_7YKWC": 6.0, "ZDYYKWC": 6.0 }, "geometry": { "type": "Point", "coordinates": [ 112.906029979233352, 27.914831656416247 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "7区3栋", "FID_1": 48.0, "4_7LS": 58.0, "41_47LS": 508.0, "ZDYLS": 1508.0, "4_7RS": 14.0, "41_47RS": 74.0, "ZDYRS": 306.0, "4_7YD": 106.0, "ZDYYD": 708.0, "DGL22": 817.0, "ZDYDGL": 811.0, "4_7YZSS": 269.0, "ZDYYZSS": 265.0, "4_7WZSS": 34.0, "ZDYWZSS": 34.0, "4_7WG": 14.0, "ZDYWG": 14.0, "4_7WG1": 4.0, "ZDYWG1": 4.0, "4_7YKWC": 1.0, "ZDYYKWC": 1.0 }, "geometry": { "type": "Point", "coordinates": [ 112.90602617209575, 27.915147648837838 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "7区4栋", "FID_1": 49.0, "4_7LS": 59.0, "41_47LS": 509.0, "ZDYLS": 1509.0, "4_7RS": 15.0, "41_47RS": 75.0, "ZDYRS": 307.0, "4_7YD": 107.0, "ZDYYD": 709.0, "DGL22": 818.0, "ZDYDGL": 812.0, "4_7YZSS": 270.0, "ZDYYZSS": 266.0, "4_7WZSS": 35.0, "ZDYWZSS": 35.0, "4_7WG": 15.0, "ZDYWG": 15.0, "4_7WG1": 10.0, "ZDYWG1": 15.0, "4_7YKWC": 2.0, "ZDYYKWC": 2.0 }, "geometry": { "type": "Point", "coordinates": [ 112.906014750682914, 27.915505519773134 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "7区5栋", "FID_1": 50.0, "4_7LS": 60.0, "41_47LS": 510.0, "ZDYLS": 1510.0, "4_7RS": 16.0, "41_47RS": 76.0, "ZDYRS": 308.0, "4_7YD": 108.0, "ZDYYD": 710.0, "DGL22": 819.0, "ZDYDGL": 813.0, "4_7YZSS": 271.0, "ZDYYZSS": 267.0, "4_7WZSS": 36.0, "ZDYWZSS": 36.0, "4_7WG": 16.0, "ZDYWG": 16.0, "4_7WG1": 1.0, "ZDYWG1": 1.0, "4_7YKWC": 3.0, "ZDYYKWC": 3.0 }, "geometry": { "type": "Point", "coordinates": [ 112.906003329270092, 27.915798669369067 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "7区6栋", "FID_1": 51.0, "4_7LS": 61.0, "41_47LS": 511.0, "ZDYLS": 1511.0, "4_7RS": 17.0, "41_47RS": 77.0, "ZDYRS": 309.0, "4_7YD": 109.0, "ZDYYD": 711.0, "DGL22": 820.0, "ZDYDGL": 814.0, "4_7YZSS": 272.0, "ZDYYZSS": 268.0, "4_7WZSS": 37.0, "ZDYWZSS": 37.0, "4_7WG": 17.0, "ZDYWG": 17.0, "4_7WG1": 2.0, "ZDYWG1": 2.0, "4_7YKWC": 4.0, "ZDYYKWC": 4.0 }, "geometry": { "type": "Point", "coordinates": [ 112.906033786370969, 27.916088011827391 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "7区7栋", "FID_1": 52.0, "4_7LS": 62.0, "41_47LS": 512.0, "ZDYLS": 1512.0, "4_7RS": 18.0, "41_47RS": 78.0, "ZDYRS": 310.0, "4_7YD": 110.0, "ZDYYD": 712.0, "DGL22": 1526.0, "ZDYDGL": 815.0, "4_7YZSS": 273.0, "ZDYYZSS": 269.0, "4_7WZSS": 38.0, "ZDYWZSS": 38.0, "4_7WG": 18.0, "ZDYWG": 18.0, "4_7WG1": 3.0, "ZDYWG1": 3.0, "4_7YKWC": 13.0, "ZDYYKWC": 15.0 }, "geometry": { "type": "Point", "coordinates": [ 112.905127687619895, 27.916038519038469 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "7区8栋", "FID_1": 53.0, "4_7LS": 63.0, "41_47LS": 513.0, "ZDYLS": 1513.0, "4_7RS": 19.0, "41_47RS": 79.0, "ZDYRS": 311.0, "4_7YD": 111.0, "ZDYYD": 713.0, "DGL22": 822.0, "ZDYDGL": 816.0, "4_7YZSS": 274.0, "ZDYYZSS": 270.0, "4_7WZSS": 39.0, "ZDYWZSS": 39.0, "4_7WG": 19.0, "ZDYWG": 19.0, "4_7WG1": 4.0, "ZDYWG1": 4.0, "4_7YKWC": 6.0, "ZDYYKWC": 6.0 }, "geometry": { "type": "Point", "coordinates": [ 112.907301563194949, 27.915501712635525 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "7区9栋", "FID_1": 54.0, "4_7LS": 64.0, "41_47LS": 514.0, "ZDYLS": 1514.0, "4_7RS": 20.0, "41_47RS": 80.0, "ZDYRS": 312.0, "4_7YD": 112.0, "ZDYYD": 714.0, "DGL22": 823.0, "ZDYDGL": 817.0, "4_7YZSS": 275.0, "ZDYYZSS": 271.0, "4_7WZSS": 40.0, "ZDYWZSS": 40.0, "4_7WG": 20.0, "ZDYWG": 20.0, "4_7WG1": 5.0, "ZDYWG1": 5.0, "4_7YKWC": 1.0, "ZDYYKWC": 1.0 }, "geometry": { "type": "Point", "coordinates": [ 112.907278720369291, 27.91577582654341 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "7区10栋", "FID_1": 55.0, "4_7LS": 65.0, "41_47LS": 515.0, "ZDYLS": 1515.0, "4_7RS": 10.0, "41_47RS": 70.0, "ZDYRS": 313.0, "4_7YD": 113.0, "ZDYYD": 715.0, "DGL22": 824.0, "ZDYDGL": 818.0, "4_7YZSS": 276.0, "ZDYYZSS": 272.0, "4_7WZSS": 30.0, "ZDYWZSS": 30.0, "4_7WG": 10.0, "ZDYWG": 10.0, "4_7WG1": 1.0, "ZDYWG1": 1.0, "4_7YKWC": 2.0, "ZDYYKWC": 2.0 }, "geometry": { "type": "Point", "coordinates": [ 112.90728633464451, 27.916049940451298 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "8区1栋", "FID_1": 56.0, "4_7LS": 66.0, "41_47LS": 516.0, "ZDYLS": 1516.0, "4_7RS": 11.0, "41_47RS": 71.0, "ZDYRS": 314.0, "4_7YD": 114.0, "ZDYYD": 716.0, "DGL22": 825.0, "ZDYDGL": 819.0, "4_7YZSS": 277.0, "ZDYYZSS": 273.0, "4_7WZSS": 31.0, "ZDYWZSS": 31.0, "4_7WG": 11.0, "ZDYWG": 11.0, "4_7WG1": 2.0, "ZDYWG1": 2.0, "4_7YKWC": 3.0, "ZDYYKWC": 3.0 }, "geometry": { "type": "Point", "coordinates": [ 112.913280910756811, 27.914085219498691 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "8区2栋", "FID_1": 57.0, "4_7LS": 67.0, "41_47LS": 517.0, "ZDYLS": 1517.0, "4_7RS": 12.0, "41_47RS": 72.0, "ZDYRS": 315.0, "4_7YD": 115.0, "ZDYYD": 717.0, "DGL22": 826.0, "ZDYDGL": 820.0, "4_7YZSS": 278.0, "ZDYYZSS": 274.0, "4_7WZSS": 32.0, "ZDYWZSS": 32.0, "4_7WG": 12.0, "ZDYWG": 12.0, "4_7WG1": 3.0, "ZDYWG1": 3.0, "4_7YKWC": 4.0, "ZDYYKWC": 4.0 }, "geometry": { "type": "Point", "coordinates": [ 112.914080409654815, 27.914076653439068 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "8区3栋", "FID_1": 58.0, "4_7LS": 68.0, "41_47LS": 518.0, "ZDYLS": 1518.0, "4_7RS": 13.0, "41_47RS": 73.0, "ZDYRS": 316.0, "4_7YD": 116.0, "ZDYYD": 718.0, "DGL22": 827.0, "ZDYDGL": 821.0, "4_7YZSS": 279.0, "ZDYYZSS": 275.0, "4_7WZSS": 65.0, "ZDYWZSS": 61.0, "4_7WG": 35.0, "ZDYWG": 28.0, "4_7WG1": 4.0, "ZDYWG1": 11.0, "4_7YKWC": 5.0, "ZDYYKWC": 5.0 }, "geometry": { "type": "Point", "coordinates": [ 112.913435099829996, 27.913762564586282 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "8区4栋", "FID_1": 59.0, "4_7LS": 110.0, "41_47LS": 852.0, "ZDYLS": 1519.0, "4_7RS": 14.0, "41_47RS": 74.0, "ZDYRS": 317.0, "4_7YD": 117.0, "ZDYYD": 719.0, "DGL22": 828.0, "ZDYDGL": 822.0, "4_7YZSS": 280.0, "ZDYYZSS": 276.0, "4_7WZSS": 34.0, "ZDYWZSS": 34.0, "4_7WG": 14.0, "ZDYWG": 14.0, "4_7WG1": 5.0, "ZDYWG1": 5.0, "4_7YKWC": 6.0, "ZDYYKWC": 6.0 }, "geometry": { "type": "Point", "coordinates": [ 112.914248875494039, 27.913759709233073 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "8区5栋", "FID_1": 60.0, "4_7LS": 50.0, "41_47LS": 500.0, "ZDYLS": 1500.0, "4_7RS": 15.0, "41_47RS": 75.0, "ZDYRS": 318.0, "4_7YD": 118.0, "ZDYYD": 700.0, "DGL22": 829.0, "ZDYDGL": 823.0, "4_7YZSS": 261.0, "ZDYYZSS": 277.0, "4_7WZSS": 35.0, "ZDYWZSS": 35.0, "4_7WG": 15.0, "ZDYWG": 15.0, "4_7WG1": 1.0, "ZDYWG1": 1.0, "4_7YKWC": 1.0, "ZDYYKWC": 1.0 }, "geometry": { "type": "Point", "coordinates": [ 112.913609276375638, 27.913431343614249 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "8区6栋", "FID_1": 61.0, "4_7LS": 51.0, "41_47LS": 501.0, "ZDYLS": 1501.0, "4_7RS": 16.0, "41_47RS": 76.0, "ZDYRS": 319.0, "4_7YD": 119.0, "ZDYYD": 701.0, "DGL22": 830.0, "ZDYDGL": 824.0, "4_7YZSS": 262.0, "ZDYYZSS": 278.0, "4_7WZSS": 36.0, "ZDYWZSS": 36.0, "4_7WG": 16.0, "ZDYWG": 16.0, "4_7WG1": 2.0, "ZDYWG1": 2.0, "4_7YKWC": 2.0, "ZDYYKWC": 2.0 }, "geometry": { "type": "Point", "coordinates": [ 112.914380221741567, 27.91341992220142 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "8区7栋", "FID_1": 62.0, "4_7LS": 52.0, "41_47LS": 502.0, "ZDYLS": 1502.0, "4_7RS": 17.0, "41_47RS": 77.0, "ZDYRS": 320.0, "4_7YD": 184.0, "ZDYYD": 863.0, "DGL22": 800.0, "ZDYDGL": 825.0, "4_7YZSS": 263.0, "ZDYYZSS": 279.0, "4_7WZSS": 37.0, "ZDYWZSS": 37.0, "4_7WG": 17.0, "ZDYWG": 17.0, "4_7WG1": 3.0, "ZDYWG1": 3.0, "4_7YKWC": 3.0, "ZDYYKWC": 3.0 }, "geometry": { "type": "Point", "coordinates": [ 112.913709213737889, 27.913100122642216 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "8区8栋", "FID_1": 63.0, "4_7LS": 53.0, "41_47LS": 503.0, "ZDYLS": 1503.0, "4_7RS": 18.0, "41_47RS": 78.0, "ZDYRS": 300.0, "4_7YD": 100.0, "ZDYYD": 703.0, "DGL22": 801.0, "ZDYDGL": 826.0, "4_7YZSS": 264.0, "ZDYYZSS": 280.0, "4_7WZSS": 38.0, "ZDYWZSS": 38.0, "4_7WG": 18.0, "ZDYWG": 18.0, "4_7WG1": 4.0, "ZDYWG1": 4.0, "4_7YKWC": 4.0, "ZDYYKWC": 4.0 }, "geometry": { "type": "Point", "coordinates": [ 112.914500146576273, 27.91310868870184 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "8区9栋", "FID_1": 64.0, "4_7LS": 54.0, "41_47LS": 504.0, "ZDYLS": 1504.0, "4_7RS": 19.0, "41_47RS": 79.0, "ZDYRS": 301.0, "4_7YD": 101.0, "ZDYYD": 704.0, "DGL22": 802.0, "ZDYDGL": 827.0, "4_7YZSS": 265.0, "ZDYYZSS": 281.0, "4_7WZSS": 39.0, "ZDYWZSS": 39.0, "4_7WG": 19.0, "ZDYWG": 19.0, "4_7WG1": 5.0, "ZDYWG1": 5.0, "4_7YKWC": 5.0, "ZDYYKWC": 5.0 }, "geometry": { "type": "Point", "coordinates": [ 112.913866258164276, 27.91278603378943 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "8区10栋", "FID_1": 65.0, "4_7LS": 55.0, "41_47LS": 505.0, "ZDYLS": 1505.0, "4_7RS": 20.0, "41_47RS": 80.0, "ZDYRS": 302.0, "4_7YD": 102.0, "ZDYYD": 705.0, "DGL22": 803.0, "ZDYDGL": 828.0, "4_7YZSS": 266.0, "ZDYYZSS": 282.0, "4_7WZSS": 40.0, "ZDYWZSS": 40.0, "4_7WG": 20.0, "ZDYWG": 20.0, "4_7WG1": 1.0, "ZDYWG1": 1.0, "4_7YKWC": 6.0, "ZDYYKWC": 6.0 }, "geometry": { "type": "Point", "coordinates": [ 112.914736665000262, 27.912783178436225 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "8区11栋", "FID_1": 66.0, "4_7LS": 56.0, "41_47LS": 506.0, "ZDYLS": 1506.0, "4_7RS": 10.0, "41_47RS": 70.0, "ZDYRS": 303.0, "4_7YD": 103.0, "ZDYYD": 706.0, "DGL22": 804.0, "ZDYDGL": 829.0, "4_7YZSS": 267.0, "ZDYYZSS": 283.0, "4_7WZSS": 30.0, "ZDYWZSS": 30.0, "4_7WG": 10.0, "ZDYWG": 10.0, "4_7WG1": 2.0, "ZDYWG1": 2.0, "4_7YKWC": 1.0, "ZDYYKWC": 1.0 }, "geometry": { "type": "Point", "coordinates": [ 112.914151317592797, 27.912459571739412 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "8区12栋", "FID_1": 67.0, "4_7LS": 57.0, "41_47LS": 507.0, "ZDYLS": 1507.0, "4_7RS": 11.0, "41_47RS": 71.0, "ZDYRS": 304.0, "4_7YD": 104.0, "ZDYYD": 707.0, "DGL22": 805.0, "ZDYDGL": 1325.0, "4_7YZSS": 268.0, "ZDYYZSS": 284.0, "4_7WZSS": 31.0, "ZDYWZSS": 31.0, "4_7WG": 11.0, "ZDYWG": 11.0, "4_7WG1": 3.0, "ZDYWG1": 3.0, "4_7YKWC": 2.0, "ZDYYKWC": 2.0 }, "geometry": { "type": "Point", "coordinates": [ 112.914965093256839, 27.912452433356396 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "8区13栋", "FID_1": 68.0, "4_7LS": 58.0, "41_47LS": 508.0, "ZDYLS": 1508.0, "4_7RS": 12.0, "41_47RS": 72.0, "ZDYRS": 305.0, "4_7YD": 105.0, "ZDYYD": 708.0, "DGL22": 806.0, "ZDYDGL": 831.0, "4_7YZSS": 269.0, "ZDYYZSS": 285.0, "4_7WZSS": 32.0, "ZDYWZSS": 32.0, "4_7WG": 12.0, "ZDYWG": 12.0, "4_7WG1": 4.0, "ZDYWG1": 4.0, "4_7YKWC": 3.0, "ZDYYKWC": 3.0 }, "geometry": { "type": "Point", "coordinates": [ 112.914749276143411, 27.912014136639097 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "8区14栋", "FID_1": 69.0, "4_7LS": 59.0, "41_47LS": 509.0, "ZDYLS": 1509.0, "4_7RS": 13.0, "41_47RS": 73.0, "ZDYRS": 306.0, "4_7YD": 106.0, "ZDYYD": 709.0, "DGL22": 807.0, "ZDYDGL": 832.0, "4_7YZSS": 270.0, "ZDYYZSS": 286.0, "4_7WZSS": 33.0, "ZDYWZSS": 33.0, "4_7WG": 13.0, "ZDYWG": 13.0, "4_7WG1": 5.0, "ZDYWG1": 5.0, "4_7YKWC": 4.0, "ZDYYKWC": 4.0 }, "geometry": { "type": "Point", "coordinates": [ 112.914909175923015, 27.911717179905548 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "8区15栋", "FID_1": 70.0, "4_7LS": 60.0, "41_47LS": 510.0, "ZDYLS": 1510.0, "4_7RS": 14.0, "41_47RS": 74.0, "ZDYRS": 307.0, "4_7YD": 107.0, "ZDYYD": 710.0, "DGL22": 808.0, "ZDYDGL": 833.0, "4_7YZSS": 271.0, "ZDYYZSS": 287.0, "4_7WZSS": 34.0, "ZDYWZSS": 34.0, "4_7WG": 14.0, "ZDYWG": 14.0, "4_7WG1": 1.0, "ZDYWG1": 1.0, "4_7YKWC": 5.0, "ZDYYKWC": 5.0 }, "geometry": { "type": "Point", "coordinates": [ 112.915084304253057, 27.911366923245463 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "8区16栋", "FID_1": 71.0, "4_7LS": 61.0, "41_47LS": 511.0, "ZDYLS": 1511.0, "4_7RS": 15.0, "41_47RS": 75.0, "ZDYRS": 308.0, "4_7YD": 108.0, "ZDYYD": 711.0, "DGL22": 809.0, "ZDYDGL": 834.0, "4_7YZSS": 272.0, "ZDYYZSS": 288.0, "4_7WZSS": 35.0, "ZDYWZSS": 35.0, "4_7WG": 15.0, "ZDYWG": 15.0, "4_7WG1": 2.0, "ZDYWG1": 2.0, "4_7YKWC": 6.0, "ZDYYKWC": 6.0 }, "geometry": { "type": "Point", "coordinates": [ 112.915289889683976, 27.911016666585379 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "8区17栋", "FID_1": 72.0, "4_7LS": 62.0, "41_47LS": 512.0, "ZDYLS": 1512.0, "4_7RS": 16.0, "41_47RS": 76.0, "ZDYRS": 309.0, "4_7YD": 109.0, "ZDYYD": 712.0, "DGL22": 810.0, "ZDYDGL": 835.0, "4_7YZSS": 273.0, "ZDYYZSS": 289.0, "4_7WZSS": 36.0, "ZDYWZSS": 36.0, "4_7WG": 16.0, "ZDYWG": 16.0, "4_7WG1": 3.0, "ZDYWG1": 3.0, "4_7YKWC": 1.0, "ZDYYKWC": 1.0 }, "geometry": { "type": "Point", "coordinates": [ 112.915487860839676, 27.91071209557661 ] } },
-    { "type": "Feature", "properties": { "Id": 0, "ssname": "8区18栋", "FID_1": 73.0, "4_7LS": 63.0, "41_47LS": 513.0, "ZDYLS": 1513.0, "4_7RS": 17.0, "41_47RS": 77.0, "ZDYRS": 310.0, "4_7YD": 110.0, "ZDYYD": 713.0, "DGL22": 811.0, "ZDYDGL": 836.0, "4_7YZSS": 274.0, "ZDYYZSS": 290.0, "4_7WZSS": 37.0, "ZDYWZSS": 37.0, "4_7WG": 17.0, "ZDYWG": 17.0, "4_7WG1": 4.0, "ZDYWG1": 4.0, "4_7YKWC": 2.0, "ZDYYKWC": 2.0 }, "geometry": { "type": "Point", "coordinates": [ 112.915701060545814, 27.910384681742187 ] } }
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "1区1栋",
+                "FID_1": 0.0,
+                "4_7LS": 50.0,
+                "41_47LS": 500.0,
+                "ZDYLS": 1500.0,
+                "4_7RS": 10.0,
+                "41_47RS": 70.0,
+                "ZDYRS": 300.0,
+                "4_7YD": 100.0,
+                "ZDYYD": 700.0,
+                "DGL22": 800.0,
+                "ZDYDGL": 804.0,
+                "4_7YZSS": 261.0,
+                "ZDYYZSS": 265.0,
+                "4_7WZSS": 30.0,
+                "ZDYWZSS": 30.0,
+                "4_7WG": 10.0,
+                "ZDYWG": 10.0,
+                "4_7WG1": 1.0,
+                "ZDYWG1": 1.0,
+                "4_7YKWC": 1.0,
+                "ZDYYKWC": 1.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.925144585504,
+                    27.89398139106
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "1区2栋",
+                "FID_1": 1.0,
+                "4_7LS": 51.0,
+                "41_47LS": 501.0,
+                "ZDYLS": 1501.0,
+                "4_7RS": 11.0,
+                "41_47RS": 71.0,
+                "ZDYRS": 301.0,
+                "4_7YD": 101.0,
+                "ZDYYD": 701.0,
+                "DGL22": 801.0,
+                "ZDYDGL": 805.0,
+                "4_7YZSS": 262.0,
+                "ZDYYZSS": 266.0,
+                "4_7WZSS": 31.0,
+                "ZDYWZSS": 31.0,
+                "4_7WG": 11.0,
+                "ZDYWG": 11.0,
+                "4_7WG1": 2.0,
+                "ZDYWG1": 2.0,
+                "4_7YKWC": 2.0,
+                "ZDYYKWC": 2.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.924996744792,
+                    27.894321289063
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "1区3栋",
+                "FID_1": 2.0,
+                "4_7LS": 52.0,
+                "41_47LS": 502.0,
+                "ZDYLS": 1502.0,
+                "4_7RS": 12.0,
+                "41_47RS": 72.0,
+                "ZDYRS": 302.0,
+                "4_7YD": 102.0,
+                "ZDYYD": 702.0,
+                "DGL22": 802.0,
+                "ZDYDGL": 806.0,
+                "4_7YZSS": 263.0,
+                "ZDYYZSS": 267.0,
+                "4_7WZSS": 32.0,
+                "ZDYWZSS": 32.0,
+                "4_7WG": 12.0,
+                "ZDYWG": 12.0,
+                "4_7WG1": 3.0,
+                "ZDYWG1": 3.0,
+                "4_7YKWC": 3.0,
+                "ZDYYKWC": 3.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.924718153212,
+                    27.894128689237
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "1区4栋",
+                "FID_1": 3.0,
+                "4_7LS": 53.0,
+                "41_47LS": 503.0,
+                "ZDYLS": 1503.0,
+                "4_7RS": 13.0,
+                "41_47RS": 73.0,
+                "ZDYRS": 303.0,
+                "4_7YD": 103.0,
+                "ZDYYD": 703.0,
+                "DGL22": 803.0,
+                "ZDYDGL": 807.0,
+                "4_7YZSS": 264.0,
+                "ZDYYZSS": 268.0,
+                "4_7WZSS": 33.0,
+                "ZDYWZSS": 33.0,
+                "4_7WG": 13.0,
+                "ZDYWG": 13.0,
+                "4_7WG1": 4.0,
+                "ZDYWG1": 4.0,
+                "4_7YKWC": 4.0,
+                "ZDYYKWC": 4.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.92434624566,
+                    27.894235568577
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "1区5栋",
+                "FID_1": 4.0,
+                "4_7LS": 54.0,
+                "41_47LS": 504.0,
+                "ZDYLS": 1504.0,
+                "4_7RS": 14.0,
+                "41_47RS": 74.0,
+                "ZDYRS": 304.0,
+                "4_7YD": 104.0,
+                "ZDYYD": 704.0,
+                "DGL22": 804.0,
+                "ZDYDGL": 808.0,
+                "4_7YZSS": 265.0,
+                "ZDYYZSS": 269.0,
+                "4_7WZSS": 34.0,
+                "ZDYWZSS": 34.0,
+                "4_7WG": 14.0,
+                "ZDYWG": 14.0,
+                "4_7WG1": 5.0,
+                "ZDYWG1": 5.0,
+                "4_7YKWC": 5.0,
+                "ZDYYKWC": 5.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.924355740018,
+                    27.894511447483
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "1区6栋",
+                "FID_1": 5.0,
+                "4_7LS": 55.0,
+                "41_47LS": 505.0,
+                "ZDYLS": 1505.0,
+                "4_7RS": 15.0,
+                "41_47RS": 75.0,
+                "ZDYRS": 305.0,
+                "4_7YD": 105.0,
+                "ZDYYD": 705.0,
+                "DGL22": 805.0,
+                "ZDYDGL": 809.0,
+                "4_7YZSS": 266.0,
+                "ZDYYZSS": 270.0,
+                "4_7WZSS": 35.0,
+                "ZDYWZSS": 35.0,
+                "4_7WG": 15.0,
+                "ZDYWG": 15.0,
+                "4_7WG1": 1.0,
+                "ZDYWG1": 1.0,
+                "4_7YKWC": 6.0,
+                "ZDYYKWC": 6.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.924951443143,
+                    27.894533148872
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "1区7栋",
+                "FID_1": 6.0,
+                "4_7LS": 56.0,
+                "41_47LS": 506.0,
+                "ZDYLS": 1506.0,
+                "4_7RS": 30.0,
+                "41_47RS": 105.0,
+                "ZDYRS": 400.0,
+                "4_7YD": 106.0,
+                "ZDYYD": 706.0,
+                "DGL22": 806.0,
+                "ZDYDGL": 810.0,
+                "4_7YZSS": 267.0,
+                "ZDYYZSS": 271.0,
+                "4_7WZSS": 36.0,
+                "ZDYWZSS": 36.0,
+                "4_7WG": 16.0,
+                "ZDYWG": 16.0,
+                "4_7WG1": 2.0,
+                "ZDYWG1": 2.0,
+                "4_7YKWC": 1.0,
+                "ZDYYKWC": 1.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.924889594185,
+                    27.894797363282
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "1区8栋",
+                "FID_1": 7.0,
+                "4_7LS": 57.0,
+                "41_47LS": 507.0,
+                "ZDYLS": 1507.0,
+                "4_7RS": 17.0,
+                "41_47RS": 77.0,
+                "ZDYRS": 307.0,
+                "4_7YD": 107.0,
+                "ZDYYD": 707.0,
+                "DGL22": 807.0,
+                "ZDYDGL": 811.0,
+                "4_7YZSS": 268.0,
+                "ZDYYZSS": 272.0,
+                "4_7WZSS": 50.0,
+                "ZDYWZSS": 37.0,
+                "4_7WG": 17.0,
+                "ZDYWG": 17.0,
+                "4_7WG1": 3.0,
+                "ZDYWG1": 3.0,
+                "4_7YKWC": 2.0,
+                "ZDYYKWC": 2.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.924439290365,
+                    27.89474717882
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "1区9栋",
+                "FID_1": 8.0,
+                "4_7LS": 58.0,
+                "41_47LS": 508.0,
+                "ZDYLS": 1508.0,
+                "4_7RS": 18.0,
+                "41_47RS": 78.0,
+                "ZDYRS": 308.0,
+                "4_7YD": 108.0,
+                "ZDYYD": 708.0,
+                "DGL22": 808.0,
+                "ZDYDGL": 1523.0,
+                "4_7YZSS": 269.0,
+                "ZDYYZSS": 273.0,
+                "4_7WZSS": 38.0,
+                "ZDYWZSS": 38.0,
+                "4_7WG": 18.0,
+                "ZDYWG": 18.0,
+                "4_7WG1": 4.0,
+                "ZDYWG1": 4.0,
+                "4_7YKWC": 3.0,
+                "ZDYYKWC": 3.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.924117567275,
+                    27.895212944879
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "1区10栋",
+                "FID_1": 9.0,
+                "4_7LS": 59.0,
+                "41_47LS": 509.0,
+                "ZDYLS": 1509.0,
+                "4_7RS": 19.0,
+                "41_47RS": 79.0,
+                "ZDYRS": 309.0,
+                "4_7YD": 109.0,
+                "ZDYYD": 709.0,
+                "DGL22": 809.0,
+                "ZDYDGL": 813.0,
+                "4_7YZSS": 270.0,
+                "ZDYYZSS": 274.0,
+                "4_7WZSS": 39.0,
+                "ZDYWZSS": 39.0,
+                "4_7WG": 19.0,
+                "ZDYWG": 19.0,
+                "4_7WG1": 5.0,
+                "ZDYWG1": 5.0,
+                "4_7YKWC": 15.0,
+                "ZDYYKWC": 14.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.924115397136,
+                    27.895472276476
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "2区5栋",
+                "FID_1": 10.0,
+                "4_7LS": 60.0,
+                "41_47LS": 510.0,
+                "ZDYLS": 1510.0,
+                "4_7RS": 20.0,
+                "41_47RS": 80.0,
+                "ZDYRS": 310.0,
+                "4_7YD": 180.0,
+                "ZDYYD": 860.0,
+                "DGL22": 810.0,
+                "ZDYDGL": 814.0,
+                "4_7YZSS": 271.0,
+                "ZDYYZSS": 275.0,
+                "4_7WZSS": 40.0,
+                "ZDYWZSS": 40.0,
+                "4_7WG": 20.0,
+                "ZDYWG": 20.0,
+                "4_7WG1": 1.0,
+                "ZDYWG1": 1.0,
+                "4_7YKWC": 5.0,
+                "ZDYYKWC": 5.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.924416775174,
+                    27.897142198351
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "2区6栋",
+                "FID_1": 11.0,
+                "4_7LS": 61.0,
+                "41_47LS": 511.0,
+                "ZDYLS": 1511.0,
+                "4_7RS": 10.0,
+                "41_47RS": 70.0,
+                "ZDYRS": 311.0,
+                "4_7YD": 111.0,
+                "ZDYYD": 711.0,
+                "DGL22": 811.0,
+                "ZDYDGL": 815.0,
+                "4_7YZSS": 272.0,
+                "ZDYYZSS": 276.0,
+                "4_7WZSS": 30.0,
+                "ZDYWZSS": 30.0,
+                "4_7WG": 10.0,
+                "ZDYWG": 10.0,
+                "4_7WG1": 2.0,
+                "ZDYWG1": 2.0,
+                "4_7YKWC": 6.0,
+                "ZDYYKWC": 6.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.9244140625,
+                    27.897410753039
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "2区7栋",
+                "FID_1": 12.0,
+                "4_7LS": 100.0,
+                "41_47LS": 750.0,
+                "ZDYLS": 1512.0,
+                "4_7RS": 11.0,
+                "41_47RS": 71.0,
+                "ZDYRS": 312.0,
+                "4_7YD": 112.0,
+                "ZDYYD": 712.0,
+                "DGL22": 1268.0,
+                "ZDYDGL": 816.0,
+                "4_7YZSS": 273.0,
+                "ZDYYZSS": 277.0,
+                "4_7WZSS": 31.0,
+                "ZDYWZSS": 31.0,
+                "4_7WG": 11.0,
+                "ZDYWG": 11.0,
+                "4_7WG1": 3.0,
+                "ZDYWG1": 3.0,
+                "4_7YKWC": 1.0,
+                "ZDYYKWC": 1.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.924393988716,
+                    27.89765625
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "2区8栋",
+                "FID_1": 13.0,
+                "4_7LS": 63.0,
+                "41_47LS": 513.0,
+                "ZDYLS": 1513.0,
+                "4_7RS": 12.0,
+                "41_47RS": 72.0,
+                "ZDYRS": 313.0,
+                "4_7YD": 113.0,
+                "ZDYYD": 713.0,
+                "DGL22": 813.0,
+                "ZDYDGL": 817.0,
+                "4_7YZSS": 274.0,
+                "ZDYYZSS": 278.0,
+                "4_7WZSS": 32.0,
+                "ZDYWZSS": 32.0,
+                "4_7WG": 12.0,
+                "ZDYWG": 12.0,
+                "4_7WG1": 4.0,
+                "ZDYWG1": 4.0,
+                "4_7YKWC": 2.0,
+                "ZDYYKWC": 2.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.92463406033,
+                    27.897867567275
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "2区9栋",
+                "FID_1": 14.0,
+                "4_7LS": 64.0,
+                "41_47LS": 514.0,
+                "ZDYLS": 1514.0,
+                "4_7RS": 13.0,
+                "41_47RS": 73.0,
+                "ZDYRS": 314.0,
+                "4_7YD": 114.0,
+                "ZDYYD": 714.0,
+                "DGL22": 814.0,
+                "ZDYDGL": 818.0,
+                "4_7YZSS": 275.0,
+                "ZDYYZSS": 279.0,
+                "4_7WZSS": 33.0,
+                "ZDYWZSS": 55.0,
+                "4_7WG": 33.0,
+                "ZDYWG": 36.0,
+                "4_7WG1": 5.0,
+                "ZDYWG1": 5.0,
+                "4_7YKWC": 3.0,
+                "ZDYYKWC": 3.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.924634331598,
+                    27.898113064237
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "2区10栋",
+                "FID_1": 15.0,
+                "4_7LS": 65.0,
+                "41_47LS": 515.0,
+                "ZDYLS": 1515.0,
+                "4_7RS": 14.0,
+                "41_47RS": 74.0,
+                "ZDYRS": 315.0,
+                "4_7YD": 115.0,
+                "ZDYYD": 715.0,
+                "DGL22": 815.0,
+                "ZDYDGL": 819.0,
+                "4_7YZSS": 276.0,
+                "ZDYYZSS": 280.0,
+                "4_7WZSS": 34.0,
+                "ZDYWZSS": 34.0,
+                "4_7WG": 14.0,
+                "ZDYWG": 14.0,
+                "4_7WG1": 1.0,
+                "ZDYWG1": 1.0,
+                "4_7YKWC": 4.0,
+                "ZDYYKWC": 4.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.924534233941,
+                    27.898418782553
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "2区11栋",
+                "FID_1": 16.0,
+                "4_7LS": 66.0,
+                "41_47LS": 516.0,
+                "ZDYLS": 1516.0,
+                "4_7RS": 15.0,
+                "41_47RS": 75.0,
+                "ZDYRS": 316.0,
+                "4_7YD": 116.0,
+                "ZDYYD": 716.0,
+                "DGL22": 816.0,
+                "ZDYDGL": 820.0,
+                "4_7YZSS": 277.0,
+                "ZDYYZSS": 265.0,
+                "4_7WZSS": 35.0,
+                "ZDYWZSS": 35.0,
+                "4_7WG": 15.0,
+                "ZDYWG": 15.0,
+                "4_7WG1": 2.0,
+                "ZDYWG1": 2.0,
+                "4_7YKWC": 5.0,
+                "ZDYYKWC": 5.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.924534233941,
+                    27.898566894532
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "3区1栋",
+                "FID_1": 17.0,
+                "4_7LS": 67.0,
+                "41_47LS": 517.0,
+                "ZDYLS": 1517.0,
+                "4_7RS": 16.0,
+                "41_47RS": 76.0,
+                "ZDYRS": 317.0,
+                "4_7YD": 117.0,
+                "ZDYYD": 717.0,
+                "DGL22": 817.0,
+                "ZDYDGL": 821.0,
+                "4_7YZSS": 278.0,
+                "ZDYYZSS": 266.0,
+                "4_7WZSS": 36.0,
+                "ZDYWZSS": 36.0,
+                "4_7WG": 16.0,
+                "ZDYWG": 16.0,
+                "4_7WG1": 3.0,
+                "ZDYWG1": 3.0,
+                "4_7YKWC": 6.0,
+                "ZDYYKWC": 6.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.9244788954,
+                    27.899918077257
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "3区2栋",
+                "FID_1": 18.0,
+                "4_7LS": 68.0,
+                "41_47LS": 518.0,
+                "ZDYLS": 1518.0,
+                "4_7RS": 17.0,
+                "41_47RS": 77.0,
+                "ZDYRS": 318.0,
+                "4_7YD": 118.0,
+                "ZDYYD": 718.0,
+                "DGL22": 818.0,
+                "ZDYDGL": 822.0,
+                "4_7YZSS": 279.0,
+                "ZDYYZSS": 267.0,
+                "4_7WZSS": 37.0,
+                "ZDYWZSS": 37.0,
+                "4_7WG": 17.0,
+                "ZDYWG": 17.0,
+                "4_7WG1": 4.0,
+                "ZDYWG1": 4.0,
+                "4_7YKWC": 1.0,
+                "ZDYYKWC": 1.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.92486029731,
+                    27.899912923178
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "3区3栋",
+                "FID_1": 19.0,
+                "4_7LS": 69.0,
+                "41_47LS": 519.0,
+                "ZDYLS": 1519.0,
+                "4_7RS": 18.0,
+                "41_47RS": 78.0,
+                "ZDYRS": 319.0,
+                "4_7YD": 119.0,
+                "ZDYYD": 719.0,
+                "DGL22": 819.0,
+                "ZDYDGL": 823.0,
+                "4_7YZSS": 280.0,
+                "ZDYYZSS": 268.0,
+                "4_7WZSS": 38.0,
+                "ZDYWZSS": 38.0,
+                "4_7WG": 18.0,
+                "ZDYWG": 18.0,
+                "4_7WG1": 5.0,
+                "ZDYWG1": 5.0,
+                "4_7YKWC": 2.0,
+                "ZDYYKWC": 2.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.924456108941,
+                    27.900138888889
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "3区4栋",
+                "FID_1": 20.0,
+                "4_7LS": 50.0,
+                "41_47LS": 500.0,
+                "ZDYLS": 1500.0,
+                "4_7RS": 19.0,
+                "41_47RS": 79.0,
+                "ZDYRS": 320.0,
+                "4_7YD": 120.0,
+                "ZDYYD": 700.0,
+                "DGL22": 820.0,
+                "ZDYDGL": 824.0,
+                "4_7YZSS": 261.0,
+                "ZDYYZSS": 269.0,
+                "4_7WZSS": 39.0,
+                "ZDYWZSS": 39.0,
+                "4_7WG": 19.0,
+                "ZDYWG": 19.0,
+                "4_7WG1": 10.0,
+                "ZDYWG1": 11.0,
+                "4_7YKWC": 3.0,
+                "ZDYYKWC": 3.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.924837510851,
+                    27.900137261285
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "3区5栋",
+                "FID_1": 21.0,
+                "4_7LS": 51.0,
+                "41_47LS": 501.0,
+                "ZDYLS": 1501.0,
+                "4_7RS": 35.0,
+                "41_47RS": 110.0,
+                "ZDYRS": 436.0,
+                "4_7YD": 100.0,
+                "ZDYYD": 701.0,
+                "DGL22": 821.0,
+                "ZDYDGL": 825.0,
+                "4_7YZSS": 262.0,
+                "ZDYYZSS": 270.0,
+                "4_7WZSS": 40.0,
+                "ZDYWZSS": 40.0,
+                "4_7WG": 20.0,
+                "ZDYWG": 20.0,
+                "4_7WG1": 2.0,
+                "ZDYWG1": 2.0,
+                "4_7YKWC": 4.0,
+                "ZDYYKWC": 4.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.924458007813,
+                    27.900380588108
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "3区6栋",
+                "FID_1": 22.0,
+                "4_7LS": 52.0,
+                "41_47LS": 502.0,
+                "ZDYLS": 1502.0,
+                "4_7RS": 10.0,
+                "41_47RS": 70.0,
+                "ZDYRS": 301.0,
+                "4_7YD": 101.0,
+                "ZDYYD": 702.0,
+                "DGL22": 822.0,
+                "ZDYDGL": 826.0,
+                "4_7YZSS": 263.0,
+                "ZDYYZSS": 271.0,
+                "4_7WZSS": 30.0,
+                "ZDYWZSS": 30.0,
+                "4_7WG": 10.0,
+                "ZDYWG": 10.0,
+                "4_7WG1": 3.0,
+                "ZDYWG1": 3.0,
+                "4_7YKWC": 5.0,
+                "ZDYYKWC": 5.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.924877387153,
+                    27.900375162761
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "4区1栋",
+                "FID_1": 23.0,
+                "4_7LS": 53.0,
+                "41_47LS": 503.0,
+                "ZDYLS": 1503.0,
+                "4_7RS": 11.0,
+                "41_47RS": 71.0,
+                "ZDYRS": 302.0,
+                "4_7YD": 102.0,
+                "ZDYYD": 703.0,
+                "DGL22": 1415.0,
+                "ZDYDGL": 827.0,
+                "4_7YZSS": 264.0,
+                "ZDYYZSS": 272.0,
+                "4_7WZSS": 60.0,
+                "ZDYWZSS": 62.0,
+                "4_7WG": 28.0,
+                "ZDYWG": 34.0,
+                "4_7WG1": 12.0,
+                "ZDYWG1": 12.0,
+                "4_7YKWC": 6.0,
+                "ZDYYKWC": 6.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.924461534289,
+                    27.902505696615
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "4区2栋",
+                "FID_1": 24.0,
+                "4_7LS": 54.0,
+                "41_47LS": 504.0,
+                "ZDYLS": 1504.0,
+                "4_7RS": 12.0,
+                "41_47RS": 72.0,
+                "ZDYRS": 303.0,
+                "4_7YD": 103.0,
+                "ZDYYD": 704.0,
+                "DGL22": 824.0,
+                "ZDYDGL": 828.0,
+                "4_7YZSS": 265.0,
+                "ZDYYZSS": 273.0,
+                "4_7WZSS": 32.0,
+                "ZDYWZSS": 32.0,
+                "4_7WG": 12.0,
+                "ZDYWG": 12.0,
+                "4_7WG1": 5.0,
+                "ZDYWG1": 5.0,
+                "4_7YKWC": 1.0,
+                "ZDYYKWC": 1.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.924366319445,
+                    27.902802463108
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "4区3栋",
+                "FID_1": 25.0,
+                "4_7LS": 55.0,
+                "41_47LS": 505.0,
+                "ZDYLS": 1505.0,
+                "4_7RS": 13.0,
+                "41_47RS": 73.0,
+                "ZDYRS": 304.0,
+                "4_7YD": 104.0,
+                "ZDYYD": 705.0,
+                "DGL22": 825.0,
+                "ZDYDGL": 829.0,
+                "4_7YZSS": 266.0,
+                "ZDYYZSS": 274.0,
+                "4_7WZSS": 33.0,
+                "ZDYWZSS": 33.0,
+                "4_7WG": 13.0,
+                "ZDYWG": 13.0,
+                "4_7WG1": 1.0,
+                "ZDYWG1": 1.0,
+                "4_7YKWC": 2.0,
+                "ZDYYKWC": 2.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.924526367188,
+                    27.903126356337
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "4区4栋",
+                "FID_1": 26.0,
+                "4_7LS": 56.0,
+                "41_47LS": 506.0,
+                "ZDYLS": 1506.0,
+                "4_7RS": 14.0,
+                "41_47RS": 74.0,
+                "ZDYRS": 305.0,
+                "4_7YD": 105.0,
+                "ZDYYD": 706.0,
+                "DGL22": 826.0,
+                "ZDYDGL": 830.0,
+                "4_7YZSS": 267.0,
+                "ZDYYZSS": 275.0,
+                "4_7WZSS": 34.0,
+                "ZDYWZSS": 34.0,
+                "4_7WG": 14.0,
+                "ZDYWG": 14.0,
+                "4_7WG1": 2.0,
+                "ZDYWG1": 2.0,
+                "4_7YKWC": 3.0,
+                "ZDYYKWC": 3.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.924541829428,
+                    27.903415256077
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "4区5栋",
+                "FID_1": 27.0,
+                "4_7LS": 105.0,
+                "41_47LS": 765.0,
+                "ZDYLS": 1507.0,
+                "4_7RS": 15.0,
+                "41_47RS": 75.0,
+                "ZDYRS": 306.0,
+                "4_7YD": 106.0,
+                "ZDYYD": 707.0,
+                "DGL22": 827.0,
+                "ZDYDGL": 831.0,
+                "4_7YZSS": 268.0,
+                "ZDYYZSS": 276.0,
+                "4_7WZSS": 35.0,
+                "ZDYWZSS": 35.0,
+                "4_7WG": 15.0,
+                "ZDYWG": 15.0,
+                "4_7WG1": 3.0,
+                "ZDYWG1": 3.0,
+                "4_7YKWC": 4.0,
+                "ZDYYKWC": 4.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.924633246528,
+                    27.903624131945
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "4区6栋",
+                "FID_1": 28.0,
+                "4_7LS": 58.0,
+                "41_47LS": 508.0,
+                "ZDYLS": 1508.0,
+                "4_7RS": 16.0,
+                "41_47RS": 76.0,
+                "ZDYRS": 307.0,
+                "4_7YD": 107.0,
+                "ZDYYD": 708.0,
+                "DGL22": 828.0,
+                "ZDYDGL": 832.0,
+                "4_7YZSS": 269.0,
+                "ZDYYZSS": 277.0,
+                "4_7WZSS": 36.0,
+                "ZDYWZSS": 36.0,
+                "4_7WG": 16.0,
+                "ZDYWG": 16.0,
+                "4_7WG1": 4.0,
+                "ZDYWG1": 4.0,
+                "4_7YKWC": 5.0,
+                "ZDYYKWC": 5.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.925161946615,
+                    27.903624403212
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "4区7栋",
+                "FID_1": 29.0,
+                "4_7LS": 59.0,
+                "41_47LS": 509.0,
+                "ZDYLS": 1509.0,
+                "4_7RS": 17.0,
+                "41_47RS": 77.0,
+                "ZDYRS": 308.0,
+                "4_7YD": 108.0,
+                "ZDYYD": 709.0,
+                "DGL22": 829.0,
+                "ZDYDGL": 833.0,
+                "4_7YZSS": 270.0,
+                "ZDYYZSS": 278.0,
+                "4_7WZSS": 37.0,
+                "ZDYWZSS": 37.0,
+                "4_7WG": 17.0,
+                "ZDYWG": 17.0,
+                "4_7WG1": 5.0,
+                "ZDYWG1": 5.0,
+                "4_7YKWC": 6.0,
+                "ZDYYKWC": 6.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.925028754341,
+                    27.903881293403
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "4区8栋",
+                "FID_1": 30.0,
+                "4_7LS": 60.0,
+                "41_47LS": 510.0,
+                "ZDYLS": 1510.0,
+                "4_7RS": 18.0,
+                "41_47RS": 78.0,
+                "ZDYRS": 309.0,
+                "4_7YD": 109.0,
+                "ZDYYD": 710.0,
+                "DGL22": 830.0,
+                "ZDYDGL": 834.0,
+                "4_7YZSS": 271.0,
+                "ZDYYZSS": 279.0,
+                "4_7WZSS": 38.0,
+                "ZDYWZSS": 38.0,
+                "4_7WG": 18.0,
+                "ZDYWG": 18.0,
+                "4_7WG1": 1.0,
+                "ZDYWG1": 1.0,
+                "4_7YKWC": 17.0,
+                "ZDYYKWC": 12.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.925517035591,
+                    27.903872070313
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "5区1栋",
+                "FID_1": 31.0,
+                "4_7LS": 61.0,
+                "41_47LS": 511.0,
+                "ZDYLS": 1511.0,
+                "4_7RS": 19.0,
+                "41_47RS": 79.0,
+                "ZDYRS": 310.0,
+                "4_7YD": 190.0,
+                "ZDYYD": 900.0,
+                "DGL22": 800.0,
+                "ZDYDGL": 835.0,
+                "4_7YZSS": 272.0,
+                "ZDYYZSS": 280.0,
+                "4_7WZSS": 39.0,
+                "ZDYWZSS": 39.0,
+                "4_7WG": 19.0,
+                "ZDYWG": 19.0,
+                "4_7WG1": 2.0,
+                "ZDYWG1": 2.0,
+                "4_7YKWC": 2.0,
+                "ZDYYKWC": 2.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.910084092882,
+                    27.906284450955
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "5区2栋",
+                "FID_1": 32.0,
+                "4_7LS": 62.0,
+                "41_47LS": 512.0,
+                "ZDYLS": 1512.0,
+                "4_7RS": 20.0,
+                "41_47RS": 80.0,
+                "ZDYRS": 311.0,
+                "4_7YD": 111.0,
+                "ZDYYD": 712.0,
+                "DGL22": 801.0,
+                "ZDYDGL": 836.0,
+                "4_7YZSS": 273.0,
+                "ZDYYZSS": 265.0,
+                "4_7WZSS": 40.0,
+                "ZDYWZSS": 40.0,
+                "4_7WG": 20.0,
+                "ZDYWG": 20.0,
+                "4_7WG1": 3.0,
+                "ZDYWG1": 3.0,
+                "4_7YKWC": 3.0,
+                "ZDYYKWC": 3.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.909572211372,
+                    27.906310763889
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "5区3栋",
+                "FID_1": 33.0,
+                "4_7LS": 63.0,
+                "41_47LS": 513.0,
+                "ZDYLS": 1513.0,
+                "4_7RS": 10.0,
+                "41_47RS": 70.0,
+                "ZDYRS": 312.0,
+                "4_7YD": 112.0,
+                "ZDYYD": 713.0,
+                "DGL22": 802.0,
+                "ZDYDGL": 837.0,
+                "4_7YZSS": 274.0,
+                "ZDYYZSS": 266.0,
+                "4_7WZSS": 30.0,
+                "ZDYWZSS": 30.0,
+                "4_7WG": 10.0,
+                "ZDYWG": 10.0,
+                "4_7WG1": 4.0,
+                "ZDYWG1": 4.0,
+                "4_7YKWC": 4.0,
+                "ZDYYKWC": 4.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.910105523004,
+                    27.906617567275
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "5区4栋",
+                "FID_1": 34.0,
+                "4_7LS": 64.0,
+                "41_47LS": 514.0,
+                "ZDYLS": 1514.0,
+                "4_7RS": 11.0,
+                "41_47RS": 71.0,
+                "ZDYRS": 313.0,
+                "4_7YD": 113.0,
+                "ZDYYD": 714.0,
+                "DGL22": 803.0,
+                "ZDYDGL": 838.0,
+                "4_7YZSS": 275.0,
+                "ZDYYZSS": 267.0,
+                "4_7WZSS": 31.0,
+                "ZDYWZSS": 31.0,
+                "4_7WG": 11.0,
+                "ZDYWG": 11.0,
+                "4_7WG1": 5.0,
+                "ZDYWG1": 5.0,
+                "4_7YKWC": 5.0,
+                "ZDYYKWC": 5.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.909505750869,
+                    27.90665093316
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "5区5栋",
+                "FID_1": 35.0,
+                "4_7LS": 65.0,
+                "41_47LS": 515.0,
+                "ZDYLS": 1515.0,
+                "4_7RS": 12.0,
+                "41_47RS": 72.0,
+                "ZDYRS": 314.0,
+                "4_7YD": 114.0,
+                "ZDYYD": 715.0,
+                "DGL22": 804.0,
+                "ZDYDGL": 839.0,
+                "4_7YZSS": 276.0,
+                "ZDYYZSS": 268.0,
+                "4_7WZSS": 32.0,
+                "ZDYWZSS": 32.0,
+                "4_7WG": 12.0,
+                "ZDYWG": 12.0,
+                "4_7WG1": 1.0,
+                "ZDYWG1": 1.0,
+                "4_7YKWC": 6.0,
+                "ZDYYKWC": 6.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.910152723525,
+                    27.907053493924
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "5区6栋",
+                "FID_1": 36.0,
+                "4_7LS": 66.0,
+                "41_47LS": 516.0,
+                "ZDYLS": 1516.0,
+                "4_7RS": 13.0,
+                "41_47RS": 73.0,
+                "ZDYRS": 315.0,
+                "4_7YD": 115.0,
+                "ZDYYD": 716.0,
+                "DGL22": 805.0,
+                "ZDYDGL": 840.0,
+                "4_7YZSS": 277.0,
+                "ZDYYZSS": 269.0,
+                "4_7WZSS": 33.0,
+                "ZDYWZSS": 33.0,
+                "4_7WG": 13.0,
+                "ZDYWG": 13.0,
+                "4_7WG1": 2.0,
+                "ZDYWG1": 2.0,
+                "4_7YKWC": 1.0,
+                "ZDYYKWC": 1.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.909714626737,
+                    27.90706108941
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "5区7栋",
+                "FID_1": 37.0,
+                "4_7LS": 67.0,
+                "41_47LS": 517.0,
+                "ZDYLS": 1517.0,
+                "4_7RS": 14.0,
+                "41_47RS": 74.0,
+                "ZDYRS": 316.0,
+                "4_7YD": 116.0,
+                "ZDYYD": 717.0,
+                "DGL22": 806.0,
+                "ZDYDGL": 841.0,
+                "4_7YZSS": 278.0,
+                "ZDYYZSS": 270.0,
+                "4_7WZSS": 34.0,
+                "ZDYWZSS": 34.0,
+                "4_7WG": 14.0,
+                "ZDYWG": 14.0,
+                "4_7WG1": 3.0,
+                "ZDYWG1": 3.0,
+                "4_7YKWC": 2.0,
+                "ZDYYKWC": 2.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.910186903212,
+                    27.907487521702
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "5区8栋",
+                "FID_1": 38.0,
+                "4_7LS": 68.0,
+                "41_47LS": 518.0,
+                "ZDYLS": 1518.0,
+                "4_7RS": 15.0,
+                "41_47RS": 75.0,
+                "ZDYRS": 317.0,
+                "4_7YD": 117.0,
+                "ZDYYD": 718.0,
+                "DGL22": 807.0,
+                "ZDYDGL": 842.0,
+                "4_7YZSS": 279.0,
+                "ZDYYZSS": 271.0,
+                "4_7WZSS": 35.0,
+                "ZDYWZSS": 35.0,
+                "4_7WG": 15.0,
+                "ZDYWG": 15.0,
+                "4_7WG1": 4.0,
+                "ZDYWG1": 4.0,
+                "4_7YKWC": 3.0,
+                "ZDYYKWC": 3.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.90971842448,
+                    27.907586263021
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "6区1栋",
+                "FID_1": 39.0,
+                "4_7LS": 69.0,
+                "41_47LS": 519.0,
+                "ZDYLS": 1519.0,
+                "4_7RS": 16.0,
+                "41_47RS": 76.0,
+                "ZDYRS": 318.0,
+                "4_7YD": 118.0,
+                "ZDYYD": 719.0,
+                "DGL22": 808.0,
+                "ZDYDGL": 1655.0,
+                "4_7YZSS": 280.0,
+                "ZDYYZSS": 272.0,
+                "4_7WZSS": 36.0,
+                "ZDYWZSS": 36.0,
+                "4_7WG": 16.0,
+                "ZDYWG": 16.0,
+                "4_7WG1": 5.0,
+                "ZDYWG1": 5.0,
+                "4_7YKWC": 4.0,
+                "ZDYYKWC": 4.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.911410047744,
+                    27.908074001737
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "6区2栋",
+                "FID_1": 40.0,
+                "4_7LS": 108.0,
+                "41_47LS": 805.0,
+                "ZDYLS": 1500.0,
+                "4_7RS": 17.0,
+                "41_47RS": 77.0,
+                "ZDYRS": 319.0,
+                "4_7YD": 119.0,
+                "ZDYYD": 700.0,
+                "DGL22": 809.0,
+                "ZDYDGL": 844.0,
+                "4_7YZSS": 261.0,
+                "ZDYYZSS": 273.0,
+                "4_7WZSS": 37.0,
+                "ZDYWZSS": 37.0,
+                "4_7WG": 17.0,
+                "ZDYWG": 17.0,
+                "4_7WG1": 1.0,
+                "ZDYWG1": 1.0,
+                "4_7YKWC": 5.0,
+                "ZDYYKWC": 5.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.911686469185,
+                    27.90831217448
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "6区3栋",
+                "FID_1": 41.0,
+                "4_7LS": 51.0,
+                "41_47LS": 501.0,
+                "ZDYLS": 1501.0,
+                "4_7RS": 18.0,
+                "41_47RS": 78.0,
+                "ZDYRS": 320.0,
+                "4_7YD": 120.0,
+                "ZDYYD": 701.0,
+                "DGL22": 810.0,
+                "ZDYDGL": 804.0,
+                "4_7YZSS": 262.0,
+                "ZDYYZSS": 274.0,
+                "4_7WZSS": 38.0,
+                "ZDYWZSS": 38.0,
+                "4_7WG": 18.0,
+                "ZDYWG": 18.0,
+                "4_7WG1": 2.0,
+                "ZDYWG1": 2.0,
+                "4_7YKWC": 6.0,
+                "ZDYYKWC": 6.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.911095920139,
+                    27.90833577474
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "6区4栋",
+                "FID_1": 42.0,
+                "4_7LS": 52.0,
+                "41_47LS": 502.0,
+                "ZDYLS": 1502.0,
+                "4_7RS": 19.0,
+                "41_47RS": 79.0,
+                "ZDYRS": 300.0,
+                "4_7YD": 100.0,
+                "ZDYYD": 702.0,
+                "DGL22": 811.0,
+                "ZDYDGL": 805.0,
+                "4_7YZSS": 263.0,
+                "ZDYYZSS": 275.0,
+                "4_7WZSS": 39.0,
+                "ZDYWZSS": 39.0,
+                "4_7WG": 19.0,
+                "ZDYWG": 19.0,
+                "4_7WG1": 3.0,
+                "ZDYWG1": 3.0,
+                "4_7YKWC": 1.0,
+                "ZDYYKWC": 1.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.911561686198,
+                    27.908666178386
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "6区5栋",
+                "FID_1": 43.0,
+                "4_7LS": 53.0,
+                "41_47LS": 503.0,
+                "ZDYLS": 1503.0,
+                "4_7RS": 20.0,
+                "41_47RS": 80.0,
+                "ZDYRS": 301.0,
+                "4_7YD": 101.0,
+                "ZDYYD": 703.0,
+                "DGL22": 812.0,
+                "ZDYDGL": 806.0,
+                "4_7YZSS": 264.0,
+                "ZDYYZSS": 276.0,
+                "4_7WZSS": 40.0,
+                "ZDYWZSS": 40.0,
+                "4_7WG": 20.0,
+                "ZDYWG": 20.0,
+                "4_7WG1": 4.0,
+                "ZDYWG1": 4.0,
+                "4_7YKWC": 2.0,
+                "ZDYYKWC": 2.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.912037760417,
+                    27.908913574219
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "6区6栋",
+                "FID_1": 44.0,
+                "4_7LS": 54.0,
+                "41_47LS": 504.0,
+                "ZDYLS": 1504.0,
+                "4_7RS": 10.0,
+                "41_47RS": 70.0,
+                "ZDYRS": 302.0,
+                "4_7YD": 102.0,
+                "ZDYYD": 704.0,
+                "DGL22": 813.0,
+                "ZDYDGL": 807.0,
+                "4_7YZSS": 265.0,
+                "ZDYYZSS": 277.0,
+                "4_7WZSS": 30.0,
+                "ZDYWZSS": 30.0,
+                "4_7WG": 10.0,
+                "ZDYWG": 10.0,
+                "4_7WG1": 5.0,
+                "ZDYWG1": 5.0,
+                "4_7YKWC": 3.0,
+                "ZDYYKWC": 3.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.911721191407,
+                    27.909213053386
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "6区7栋",
+                "FID_1": 45.0,
+                "4_7LS": 55.0,
+                "41_47LS": 505.0,
+                "ZDYLS": 1505.0,
+                "4_7RS": 11.0,
+                "41_47RS": 71.0,
+                "ZDYRS": 303.0,
+                "4_7YD": 103.0,
+                "ZDYYD": 705.0,
+                "DGL22": 814.0,
+                "ZDYDGL": 808.0,
+                "4_7YZSS": 266.0,
+                "ZDYYZSS": 278.0,
+                "4_7WZSS": 31.0,
+                "ZDYWZSS": 31.0,
+                "4_7WG": 11.0,
+                "ZDYWG": 11.0,
+                "4_7WG1": 1.0,
+                "ZDYWG1": 1.0,
+                "4_7YKWC": 4.0,
+                "ZDYYKWC": 4.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.911456976997,
+                    27.909048394098
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "7区1栋",
+                "FID_1": 46.0,
+                "4_7LS": 56.0,
+                "41_47LS": 506.0,
+                "ZDYLS": 1506.0,
+                "4_7RS": 38.0,
+                "41_47RS": 109.0,
+                "ZDYRS": 415.0,
+                "4_7YD": 104.0,
+                "ZDYYD": 706.0,
+                "DGL22": 815.0,
+                "ZDYDGL": 809.0,
+                "4_7YZSS": 267.0,
+                "ZDYYZSS": 279.0,
+                "4_7WZSS": 32.0,
+                "ZDYWZSS": 32.0,
+                "4_7WG": 12.0,
+                "ZDYWG": 12.0,
+                "4_7WG1": 2.0,
+                "ZDYWG1": 2.0,
+                "4_7YKWC": 5.0,
+                "ZDYYKWC": 5.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.911427137587,
+                    27.911032986112
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "7区2栋",
+                "FID_1": 47.0,
+                "4_7LS": 57.0,
+                "41_47LS": 507.0,
+                "ZDYLS": 1507.0,
+                "4_7RS": 13.0,
+                "41_47RS": 73.0,
+                "ZDYRS": 305.0,
+                "4_7YD": 105.0,
+                "ZDYYD": 707.0,
+                "DGL22": 816.0,
+                "ZDYDGL": 810.0,
+                "4_7YZSS": 268.0,
+                "ZDYYZSS": 280.0,
+                "4_7WZSS": 33.0,
+                "ZDYWZSS": 33.0,
+                "4_7WG": 13.0,
+                "ZDYWG": 13.0,
+                "4_7WG1": 3.0,
+                "ZDYWG1": 3.0,
+                "4_7YKWC": 6.0,
+                "ZDYYKWC": 6.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.911411675348,
+                    27.911330023872
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "7区3栋",
+                "FID_1": 48.0,
+                "4_7LS": 58.0,
+                "41_47LS": 508.0,
+                "ZDYLS": 1508.0,
+                "4_7RS": 14.0,
+                "41_47RS": 74.0,
+                "ZDYRS": 306.0,
+                "4_7YD": 106.0,
+                "ZDYYD": 708.0,
+                "DGL22": 817.0,
+                "ZDYDGL": 811.0,
+                "4_7YZSS": 269.0,
+                "ZDYYZSS": 265.0,
+                "4_7WZSS": 34.0,
+                "ZDYWZSS": 34.0,
+                "4_7WG": 14.0,
+                "ZDYWG": 14.0,
+                "4_7WG1": 4.0,
+                "ZDYWG1": 4.0,
+                "4_7YKWC": 1.0,
+                "ZDYYKWC": 1.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.911407877605,
+                    27.911646050348
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "7区4栋",
+                "FID_1": 49.0,
+                "4_7LS": 59.0,
+                "41_47LS": 509.0,
+                "ZDYLS": 1509.0,
+                "4_7RS": 15.0,
+                "41_47RS": 75.0,
+                "ZDYRS": 307.0,
+                "4_7YD": 107.0,
+                "ZDYYD": 709.0,
+                "DGL22": 818.0,
+                "ZDYDGL": 812.0,
+                "4_7YZSS": 270.0,
+                "ZDYYZSS": 266.0,
+                "4_7WZSS": 35.0,
+                "ZDYWZSS": 35.0,
+                "4_7WG": 15.0,
+                "ZDYWG": 15.0,
+                "4_7WG1": 10.0,
+                "ZDYWG1": 15.0,
+                "4_7YKWC": 2.0,
+                "ZDYYKWC": 2.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.911396484375,
+                    27.912003851997
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "7区5栋",
+                "FID_1": 50.0,
+                "4_7LS": 60.0,
+                "41_47LS": 510.0,
+                "ZDYLS": 1510.0,
+                "4_7RS": 16.0,
+                "41_47RS": 76.0,
+                "ZDYRS": 308.0,
+                "4_7YD": 108.0,
+                "ZDYYD": 710.0,
+                "DGL22": 819.0,
+                "ZDYDGL": 813.0,
+                "4_7YZSS": 271.0,
+                "ZDYYZSS": 267.0,
+                "4_7WZSS": 36.0,
+                "ZDYWZSS": 36.0,
+                "4_7WG": 16.0,
+                "ZDYWG": 16.0,
+                "4_7WG1": 1.0,
+                "ZDYWG1": 1.0,
+                "4_7YKWC": 3.0,
+                "ZDYYKWC": 3.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.911385091146,
+                    27.912296820747
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "7区6栋",
+                "FID_1": 51.0,
+                "4_7LS": 61.0,
+                "41_47LS": 511.0,
+                "ZDYLS": 1511.0,
+                "4_7RS": 17.0,
+                "41_47RS": 77.0,
+                "ZDYRS": 309.0,
+                "4_7YD": 109.0,
+                "ZDYYD": 711.0,
+                "DGL22": 820.0,
+                "ZDYDGL": 814.0,
+                "4_7YZSS": 272.0,
+                "ZDYYZSS": 268.0,
+                "4_7WZSS": 37.0,
+                "ZDYWZSS": 37.0,
+                "4_7WG": 17.0,
+                "ZDYWG": 17.0,
+                "4_7WG1": 2.0,
+                "ZDYWG1": 2.0,
+                "4_7YKWC": 4.0,
+                "ZDYYKWC": 4.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.911415744358,
+                    27.912585991754
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "7区7栋",
+                "FID_1": 52.0,
+                "4_7LS": 62.0,
+                "41_47LS": 512.0,
+                "ZDYLS": 1512.0,
+                "4_7RS": 18.0,
+                "41_47RS": 78.0,
+                "ZDYRS": 310.0,
+                "4_7YD": 110.0,
+                "ZDYYD": 712.0,
+                "DGL22": 1526.0,
+                "ZDYDGL": 815.0,
+                "4_7YZSS": 273.0,
+                "ZDYYZSS": 269.0,
+                "4_7WZSS": 38.0,
+                "ZDYWZSS": 38.0,
+                "4_7WG": 18.0,
+                "ZDYWG": 18.0,
+                "4_7WG1": 3.0,
+                "ZDYWG1": 3.0,
+                "4_7YKWC": 13.0,
+                "ZDYYKWC": 15.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.910509168837,
+                    27.912536621094
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "7区8栋",
+                "FID_1": 53.0,
+                "4_7LS": 63.0,
+                "41_47LS": 513.0,
+                "ZDYLS": 1513.0,
+                "4_7RS": 19.0,
+                "41_47RS": 79.0,
+                "ZDYRS": 311.0,
+                "4_7YD": 111.0,
+                "ZDYYD": 713.0,
+                "DGL22": 822.0,
+                "ZDYDGL": 816.0,
+                "4_7YZSS": 274.0,
+                "ZDYYZSS": 270.0,
+                "4_7WZSS": 39.0,
+                "ZDYWZSS": 39.0,
+                "4_7WG": 19.0,
+                "ZDYWG": 19.0,
+                "4_7WG1": 4.0,
+                "ZDYWG1": 4.0,
+                "4_7YKWC": 6.0,
+                "ZDYYKWC": 6.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.912684190539,
+                    27.912000325521
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "7区9栋",
+                "FID_1": 54.0,
+                "4_7LS": 64.0,
+                "41_47LS": 514.0,
+                "ZDYLS": 1514.0,
+                "4_7RS": 20.0,
+                "41_47RS": 80.0,
+                "ZDYRS": 312.0,
+                "4_7YD": 112.0,
+                "ZDYYD": 714.0,
+                "DGL22": 823.0,
+                "ZDYDGL": 817.0,
+                "4_7YZSS": 275.0,
+                "ZDYYZSS": 271.0,
+                "4_7WZSS": 40.0,
+                "ZDYWZSS": 40.0,
+                "4_7WG": 20.0,
+                "ZDYWG": 20.0,
+                "4_7WG1": 5.0,
+                "ZDYWG1": 5.0,
+                "4_7YKWC": 1.0,
+                "ZDYYKWC": 1.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.91266140408,
+                    27.912274305556
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "7区10栋",
+                "FID_1": 55.0,
+                "4_7LS": 65.0,
+                "41_47LS": 515.0,
+                "ZDYLS": 1515.0,
+                "4_7RS": 10.0,
+                "41_47RS": 70.0,
+                "ZDYRS": 313.0,
+                "4_7YD": 113.0,
+                "ZDYYD": 715.0,
+                "DGL22": 824.0,
+                "ZDYDGL": 818.0,
+                "4_7YZSS": 276.0,
+                "ZDYYZSS": 272.0,
+                "4_7WZSS": 30.0,
+                "ZDYWZSS": 30.0,
+                "4_7WG": 10.0,
+                "ZDYWG": 10.0,
+                "4_7WG1": 1.0,
+                "ZDYWG1": 1.0,
+                "4_7YKWC": 2.0,
+                "ZDYYKWC": 2.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.912668999566,
+                    27.912548285591
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "8区1栋",
+                "FID_1": 56.0,
+                "4_7LS": 66.0,
+                "41_47LS": 516.0,
+                "ZDYLS": 1516.0,
+                "4_7RS": 11.0,
+                "41_47RS": 71.0,
+                "ZDYRS": 314.0,
+                "4_7YD": 114.0,
+                "ZDYYD": 716.0,
+                "DGL22": 825.0,
+                "ZDYDGL": 819.0,
+                "4_7YZSS": 277.0,
+                "ZDYYZSS": 273.0,
+                "4_7WZSS": 31.0,
+                "ZDYWZSS": 31.0,
+                "4_7WG": 11.0,
+                "ZDYWG": 11.0,
+                "4_7WG1": 2.0,
+                "ZDYWG1": 2.0,
+                "4_7YKWC": 3.0,
+                "ZDYYKWC": 3.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.91866780599,
+                    27.910586208768
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "8区2栋",
+                "FID_1": 57.0,
+                "4_7LS": 67.0,
+                "41_47LS": 517.0,
+                "ZDYLS": 1517.0,
+                "4_7RS": 12.0,
+                "41_47RS": 72.0,
+                "ZDYRS": 315.0,
+                "4_7YD": 115.0,
+                "ZDYYD": 717.0,
+                "DGL22": 826.0,
+                "ZDYDGL": 820.0,
+                "4_7YZSS": 278.0,
+                "ZDYYZSS": 274.0,
+                "4_7WZSS": 32.0,
+                "ZDYWZSS": 32.0,
+                "4_7WG": 12.0,
+                "ZDYWG": 12.0,
+                "4_7WG1": 3.0,
+                "ZDYWG1": 3.0,
+                "4_7YKWC": 4.0,
+                "ZDYYKWC": 4.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.919468315973,
+                    27.910578070747
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "8区3栋",
+                "FID_1": 58.0,
+                "4_7LS": 68.0,
+                "41_47LS": 518.0,
+                "ZDYLS": 1518.0,
+                "4_7RS": 13.0,
+                "41_47RS": 73.0,
+                "ZDYRS": 316.0,
+                "4_7YD": 116.0,
+                "ZDYYD": 718.0,
+                "DGL22": 827.0,
+                "ZDYDGL": 821.0,
+                "4_7YZSS": 279.0,
+                "ZDYYZSS": 275.0,
+                "4_7WZSS": 65.0,
+                "ZDYWZSS": 61.0,
+                "4_7WG": 35.0,
+                "ZDYWG": 28.0,
+                "4_7WG1": 4.0,
+                "ZDYWG1": 11.0,
+                "4_7YKWC": 5.0,
+                "ZDYYKWC": 5.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.918822157119,
+                    27.910263671875
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "8区4栋",
+                "FID_1": 59.0,
+                "4_7LS": 110.0,
+                "41_47LS": 852.0,
+                "ZDYLS": 1519.0,
+                "4_7RS": 14.0,
+                "41_47RS": 74.0,
+                "ZDYRS": 317.0,
+                "4_7YD": 117.0,
+                "ZDYYD": 719.0,
+                "DGL22": 828.0,
+                "ZDYDGL": 822.0,
+                "4_7YZSS": 280.0,
+                "ZDYYZSS": 276.0,
+                "4_7WZSS": 34.0,
+                "ZDYWZSS": 34.0,
+                "4_7WG": 14.0,
+                "ZDYWG": 14.0,
+                "4_7WG1": 5.0,
+                "ZDYWG1": 5.0,
+                "4_7YKWC": 6.0,
+                "ZDYYKWC": 6.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.919636773004,
+                    27.910261230469
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "8区5栋",
+                "FID_1": 60.0,
+                "4_7LS": 50.0,
+                "41_47LS": 500.0,
+                "ZDYLS": 1500.0,
+                "4_7RS": 15.0,
+                "41_47RS": 75.0,
+                "ZDYRS": 318.0,
+                "4_7YD": 118.0,
+                "ZDYYD": 700.0,
+                "DGL22": 829.0,
+                "ZDYDGL": 823.0,
+                "4_7YZSS": 261.0,
+                "ZDYYZSS": 277.0,
+                "4_7WZSS": 35.0,
+                "ZDYWZSS": 35.0,
+                "4_7WG": 15.0,
+                "ZDYWG": 15.0,
+                "4_7WG1": 1.0,
+                "ZDYWG1": 1.0,
+                "4_7YKWC": 1.0,
+                "ZDYYKWC": 1.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.918996582032,
+                    27.909932725695
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "8区6栋",
+                "FID_1": 61.0,
+                "4_7LS": 51.0,
+                "41_47LS": 501.0,
+                "ZDYLS": 1501.0,
+                "4_7RS": 16.0,
+                "41_47RS": 76.0,
+                "ZDYRS": 319.0,
+                "4_7YD": 119.0,
+                "ZDYYD": 701.0,
+                "DGL22": 830.0,
+                "ZDYDGL": 824.0,
+                "4_7YZSS": 262.0,
+                "ZDYYZSS": 278.0,
+                "4_7WZSS": 36.0,
+                "ZDYWZSS": 36.0,
+                "4_7WG": 16.0,
+                "ZDYWG": 16.0,
+                "4_7WG1": 2.0,
+                "ZDYWG1": 2.0,
+                "4_7YKWC": 2.0,
+                "ZDYYKWC": 2.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.919768066407,
+                    27.909921875
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "8区7栋",
+                "FID_1": 62.0,
+                "4_7LS": 52.0,
+                "41_47LS": 502.0,
+                "ZDYLS": 1502.0,
+                "4_7RS": 17.0,
+                "41_47RS": 77.0,
+                "ZDYRS": 320.0,
+                "4_7YD": 184.0,
+                "ZDYYD": 863.0,
+                "DGL22": 800.0,
+                "ZDYDGL": 825.0,
+                "4_7YZSS": 263.0,
+                "ZDYYZSS": 279.0,
+                "4_7WZSS": 37.0,
+                "ZDYWZSS": 37.0,
+                "4_7WG": 17.0,
+                "ZDYWG": 17.0,
+                "4_7WG1": 3.0,
+                "ZDYWG1": 3.0,
+                "4_7YKWC": 3.0,
+                "ZDYYKWC": 3.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.919096408421,
+                    27.909601508247
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "8区8栋",
+                "FID_1": 63.0,
+                "4_7LS": 53.0,
+                "41_47LS": 503.0,
+                "ZDYLS": 1503.0,
+                "4_7RS": 18.0,
+                "41_47RS": 78.0,
+                "ZDYRS": 300.0,
+                "4_7YD": 100.0,
+                "ZDYYD": 703.0,
+                "DGL22": 801.0,
+                "ZDYDGL": 826.0,
+                "4_7YZSS": 264.0,
+                "ZDYYZSS": 280.0,
+                "4_7WZSS": 38.0,
+                "ZDYWZSS": 38.0,
+                "4_7WG": 18.0,
+                "ZDYWG": 18.0,
+                "4_7WG1": 4.0,
+                "ZDYWG1": 4.0,
+                "4_7YKWC": 4.0,
+                "ZDYYKWC": 4.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.919888237848,
+                    27.90961046007
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "8区9栋",
+                "FID_1": 64.0,
+                "4_7LS": 54.0,
+                "41_47LS": 504.0,
+                "ZDYLS": 1504.0,
+                "4_7RS": 19.0,
+                "41_47RS": 79.0,
+                "ZDYRS": 301.0,
+                "4_7YD": 101.0,
+                "ZDYYD": 704.0,
+                "DGL22": 802.0,
+                "ZDYDGL": 827.0,
+                "4_7YZSS": 265.0,
+                "ZDYYZSS": 281.0,
+                "4_7WZSS": 39.0,
+                "ZDYWZSS": 39.0,
+                "4_7WG": 19.0,
+                "ZDYWG": 19.0,
+                "4_7WG1": 5.0,
+                "ZDYWG1": 5.0,
+                "4_7YKWC": 5.0,
+                "ZDYYKWC": 5.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.919253472223,
+                    27.90928765191
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "8区10栋",
+                "FID_1": 65.0,
+                "4_7LS": 55.0,
+                "41_47LS": 505.0,
+                "ZDYLS": 1505.0,
+                "4_7RS": 20.0,
+                "41_47RS": 80.0,
+                "ZDYRS": 302.0,
+                "4_7YD": 102.0,
+                "ZDYYD": 705.0,
+                "DGL22": 803.0,
+                "ZDYDGL": 828.0,
+                "4_7YZSS": 266.0,
+                "ZDYYZSS": 282.0,
+                "4_7WZSS": 40.0,
+                "ZDYWZSS": 40.0,
+                "4_7WG": 20.0,
+                "ZDYWG": 20.0,
+                "4_7WG1": 1.0,
+                "ZDYWG1": 1.0,
+                "4_7YKWC": 6.0,
+                "ZDYYKWC": 6.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.920125054254,
+                    27.909285210504
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "8区11栋",
+                "FID_1": 66.0,
+                "4_7LS": 56.0,
+                "41_47LS": 506.0,
+                "ZDYLS": 1506.0,
+                "4_7RS": 10.0,
+                "41_47RS": 70.0,
+                "ZDYRS": 303.0,
+                "4_7YD": 103.0,
+                "ZDYYD": 706.0,
+                "DGL22": 804.0,
+                "ZDYDGL": 829.0,
+                "4_7YZSS": 267.0,
+                "ZDYYZSS": 283.0,
+                "4_7WZSS": 30.0,
+                "ZDYWZSS": 30.0,
+                "4_7WG": 10.0,
+                "ZDYWG": 10.0,
+                "4_7WG1": 2.0,
+                "ZDYWG1": 2.0,
+                "4_7YKWC": 1.0,
+                "ZDYYKWC": 1.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.919538845487,
+                    27.908961317275
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "8区12栋",
+                "FID_1": 67.0,
+                "4_7LS": 57.0,
+                "41_47LS": 507.0,
+                "ZDYLS": 1507.0,
+                "4_7RS": 11.0,
+                "41_47RS": 71.0,
+                "ZDYRS": 304.0,
+                "4_7YD": 104.0,
+                "ZDYYD": 707.0,
+                "DGL22": 805.0,
+                "ZDYDGL": 1325.0,
+                "4_7YZSS": 268.0,
+                "ZDYYZSS": 284.0,
+                "4_7WZSS": 31.0,
+                "ZDYWZSS": 31.0,
+                "4_7WG": 11.0,
+                "ZDYWG": 11.0,
+                "4_7WG1": 3.0,
+                "ZDYWG1": 3.0,
+                "4_7YKWC": 2.0,
+                "ZDYYKWC": 2.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.920353461372,
+                    27.908954535591
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "8区13栋",
+                "FID_1": 68.0,
+                "4_7LS": 58.0,
+                "41_47LS": 508.0,
+                "ZDYLS": 1508.0,
+                "4_7RS": 12.0,
+                "41_47RS": 72.0,
+                "ZDYRS": 305.0,
+                "4_7YD": 105.0,
+                "ZDYYD": 708.0,
+                "DGL22": 806.0,
+                "ZDYDGL": 831.0,
+                "4_7YZSS": 269.0,
+                "ZDYYZSS": 285.0,
+                "4_7WZSS": 32.0,
+                "ZDYWZSS": 32.0,
+                "4_7WG": 12.0,
+                "ZDYWG": 12.0,
+                "4_7WG1": 4.0,
+                "ZDYWG1": 4.0,
+                "4_7YKWC": 3.0,
+                "ZDYYKWC": 3.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.920137261285,
+                    27.908516167535
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "8区14栋",
+                "FID_1": 69.0,
+                "4_7LS": 59.0,
+                "41_47LS": 509.0,
+                "ZDYLS": 1509.0,
+                "4_7RS": 13.0,
+                "41_47RS": 73.0,
+                "ZDYRS": 306.0,
+                "4_7YD": 106.0,
+                "ZDYYD": 709.0,
+                "DGL22": 807.0,
+                "ZDYDGL": 832.0,
+                "4_7YZSS": 270.0,
+                "ZDYYZSS": 286.0,
+                "4_7WZSS": 33.0,
+                "ZDYWZSS": 33.0,
+                "4_7WG": 13.0,
+                "ZDYWG": 13.0,
+                "4_7WG1": 5.0,
+                "ZDYWG1": 5.0,
+                "4_7YKWC": 4.0,
+                "ZDYYKWC": 4.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.920297580296,
+                    27.90821967231
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "8区15栋",
+                "FID_1": 70.0,
+                "4_7LS": 60.0,
+                "41_47LS": 510.0,
+                "ZDYLS": 1510.0,
+                "4_7RS": 14.0,
+                "41_47RS": 74.0,
+                "ZDYRS": 307.0,
+                "4_7YD": 107.0,
+                "ZDYYD": 710.0,
+                "DGL22": 808.0,
+                "ZDYDGL": 833.0,
+                "4_7YZSS": 271.0,
+                "ZDYYZSS": 287.0,
+                "4_7WZSS": 34.0,
+                "ZDYWZSS": 34.0,
+                "4_7WG": 14.0,
+                "ZDYWG": 14.0,
+                "4_7WG1": 1.0,
+                "ZDYWG1": 1.0,
+                "4_7YKWC": 5.0,
+                "ZDYYKWC": 5.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.920473361546,
+                    27.907870008681
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "8区16栋",
+                "FID_1": 71.0,
+                "4_7LS": 61.0,
+                "41_47LS": 511.0,
+                "ZDYLS": 1511.0,
+                "4_7RS": 15.0,
+                "41_47RS": 75.0,
+                "ZDYRS": 308.0,
+                "4_7YD": 108.0,
+                "ZDYYD": 711.0,
+                "DGL22": 809.0,
+                "ZDYDGL": 834.0,
+                "4_7YZSS": 272.0,
+                "ZDYYZSS": 288.0,
+                "4_7WZSS": 35.0,
+                "ZDYWZSS": 35.0,
+                "4_7WG": 15.0,
+                "ZDYWG": 15.0,
+                "4_7WG1": 2.0,
+                "ZDYWG1": 2.0,
+                "4_7YKWC": 6.0,
+                "ZDYYKWC": 6.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.920678982205,
+                    27.907519802518
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "8区17栋",
+                "FID_1": 72.0,
+                "4_7LS": 62.0,
+                "41_47LS": 512.0,
+                "ZDYLS": 1512.0,
+                "4_7RS": 16.0,
+                "41_47RS": 76.0,
+                "ZDYRS": 309.0,
+                "4_7YD": 109.0,
+                "ZDYYD": 712.0,
+                "DGL22": 810.0,
+                "ZDYDGL": 835.0,
+                "4_7YZSS": 273.0,
+                "ZDYYZSS": 289.0,
+                "4_7WZSS": 36.0,
+                "ZDYWZSS": 36.0,
+                "4_7WG": 16.0,
+                "ZDYWG": 16.0,
+                "4_7WG1": 3.0,
+                "ZDYWG1": 3.0,
+                "4_7YKWC": 1.0,
+                "ZDYYKWC": 1.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.920877278646,
+                    27.907215711806
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "Id": 0,
+                "ssname": "8区18栋",
+                "FID_1": 73.0,
+                "4_7LS": 63.0,
+                "41_47LS": 513.0,
+                "ZDYLS": 1513.0,
+                "4_7RS": 17.0,
+                "41_47RS": 77.0,
+                "ZDYRS": 310.0,
+                "4_7YD": 110.0,
+                "ZDYYD": 713.0,
+                "DGL22": 811.0,
+                "ZDYDGL": 836.0,
+                "4_7YZSS": 274.0,
+                "ZDYYZSS": 290.0,
+                "4_7WZSS": 37.0,
+                "ZDYWZSS": 37.0,
+                "4_7WG": 17.0,
+                "ZDYWG": 17.0,
+                "4_7WG1": 4.0,
+                "ZDYWG1": 4.0,
+                "4_7YKWC": 2.0,
+                "ZDYYKWC": 2.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    112.92109076606,
+                    27.906888292101
+                ]
+            }
+        }
     ]
-    }
+}
     
 const winInfo = [
     {"序号":"1","楼栋编号":"0101","楼栋名称":"1区1栋","宿舍容纳人数":"260","当前宿舍人数":"185","未到宿舍人数":"75","今日冷水用量":"58吨","今日热水用量":"21吨","今日用电量":"434度","管理员姓名":"张一","管理员电话":"17533385890"},

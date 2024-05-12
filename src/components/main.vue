@@ -174,7 +174,7 @@ export default {
             viewMode: '3D',
             mapStyle: 'amap://styles/84ba10a821298afbfc69cac6d854d241',
             zooms: [2, 20],
-            center: [112.91150, 27.90742],
+            center: [112.92150, 27.89942],
             WebGLParams: {
               preserveDrawingBuffer: true
             }
@@ -198,6 +198,9 @@ export default {
 
     },
     renderGeojson(params) {
+    if(this.prismLayer){
+      this.$message.error('请先复位地图再进行其他操作')
+    }
       this.loca = null;
       console.log('参数', params);
       this.clearAllPoi();
@@ -260,7 +263,7 @@ export default {
         radius: 10,
         height: (index, f) => {
           var props = f.properties;
-          var height = ((props[prop] - min) / (max - min)) * 100;
+          var height = ((props[prop] - min) / (max - min)) * 200;
           return height;
         },
         rotation: 360,
