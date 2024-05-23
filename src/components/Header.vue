@@ -3,7 +3,7 @@
     <div class="title">
       基于WebGIS的智慧宿舍系统
     </div>
-    <el-dropdown @command="handleCommand1" placement="bottom-end">
+    <!-- <el-dropdown @command="handleCommand1" placement="bottom-end">
       <span class="el-dropdown-link">
         <div color="#FF0000 ">地图展示</div>
         <i class="el-icon-arrow-down el-icon--right"></i>
@@ -12,8 +12,8 @@
         <el-dropdown-item command="main">地图页面</el-dropdown-item>
         <el-dropdown-item command="test">测试</el-dropdown-item>
 
-      </el-dropdown-menu>
-    </el-dropdown>
+      </el-dropdown-menu> -->
+    <!-- </el-dropdown> -->
     <el-dropdown @command="handleCommand2" placement="bottom-end">
       <span class="el-dropdown-link">
         基础数据管理
@@ -35,7 +35,7 @@
         <el-dropdown-item command="student_information_management">学生信息管理</el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
-    <el-dropdown @command="handleCommand3" placement="bottom-end">
+    <!-- <el-dropdown @command="handleCommand3" placement="bottom-end">
       <span class="el-dropdown-link">
         系统管理
         <i class="el-icon-arrow-down el-icon--right"></i>
@@ -43,7 +43,7 @@
       <el-dropdown-menu slot="dropdown">
         <el-dropdown-item command="user_manage">用户管理</el-dropdown-item>
       </el-dropdown-menu>
-    </el-dropdown>
+    </el-dropdown> -->
     <el-dropdown placement="bottom-end" @command="handleCommand" >
       <span class="el-dropdown-link avatar">
         <el-avatar size="small" :src="avatarSrc"></el-avatar>

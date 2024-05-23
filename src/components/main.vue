@@ -224,6 +224,7 @@ export default {
         sum += n;
       });
       let avg = sum / this.geojson.features.length;
+      console.log('最值',max,min,avg)
 
       console.log('locaDict', locaDict[params]);
       this.loca = new this.Loca.Container({
@@ -263,7 +264,7 @@ export default {
         radius: 10,
         height: (index, f) => {
           var props = f.properties;
-          var height = ((props[prop] - min) / (max - min)) * 200;
+          var height = ((props[prop] - min) / (max - min)) * 100 + 20;
           return height;
         },
         rotation: 360,

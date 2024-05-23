@@ -33,6 +33,7 @@
     </el-card>
   </div>
 </template>
+
 <script>
 // 此页面主要是用于登录，包括用户名，密码，登录按钮，注册按钮
 // 通过v-model来绑定用户名和密码
@@ -52,59 +53,37 @@ export default {
     };
   },
   methods: {
-    // login() {
-    //   // Perform login logic here
-    //   // You can make an API call to authenticate the user
-    //   console.log('Login clicked');
-    //   console.log('Username:', this.loginForm.username);
-    //   console.log('Password:', this.loginForm.password);
-    //   let that = this
-    //   axios.post('http://127.0.0.1:8000/travel/login',{
-    //     'username': this.loginForm.username,
-    //     'password': this.loginForm.password
-    //   }).then(res => {
-    //     console.log(res)
-    //     if (res.status == 201) {
-    //       this.$message({
-    //         message: '登录成功',
-    //         type: 'success'
-    //       })
-    //       // 将用户信息存储到sessionStorage中
-    //       sessionStorage.setItem('user', this.loginForm.username)
-    //       that.$router.push('/travelPlan')
-    //     } else {
-    //       this.$message({
-    //         message: '登录失败',
-    //         type: 'error'
-    //       })
-    //     }
-    //   })
-
-    // }
     login(){
       this.$router.push('/main')
     }
   }
 };
 </script>
+
 <style scoped>
 .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background: url('@/assets/login.jpg') no-repeat center center;
+  background-size: cover;
 }
 
 .login-card {
   width: 400px;
   padding: 30px;
   text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .login-title {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 20px;
+  color: #333;
 }
 
 .login-form {

@@ -564,7 +564,7 @@ export default {
 					return acc + parseInt(cur.Electrical_power)
 				}, 0)
 				that.v = that.buildingE[0].Voltage
-				that.i = that.buildingE[0].Current
+				that.a = that.buildingE[0].Current
 				
 				// 数据查询模块
 			}));

@@ -14,6 +14,8 @@
     "echarts": "^5.4.2",
     "element-ui": "^2.15.13",
     "node-polyfill-webpack-plugin": "^2.0.1",
+    "video.js": "^5.20.5",
+    "videojs-resolution-switcher": "^0.4.1",
     "vue": "^2.6.14",
     "vue-amap": "^0.5.10",
     "vue-router": "^3.5.4",
